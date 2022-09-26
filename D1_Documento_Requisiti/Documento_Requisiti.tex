@@ -1,0 +1,77 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+
+\graphicspath{ {./images/} }
+
+\renewcommand{\contentsname}{Indice}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+
+\setcounter{section}{-1}
+
+\title{\textbf{\Huge Analisi dei Requisiti}}
+\author{Edoardo Ghirardello, Giulio Cappelli, Elia Casotti \\ Gruppo T42}
+\date{2022}
+
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+\tableofcontents
+\clearpage
+
+\section{Scopo del documento}
+\begin{description}
+    \item[] In questo documento si riporta la descrizione e il funzionamento dell'applicazione "NOME" in linguaggio naturale.
+    \item[] Verranno analizzati gli obiettivi del progetto, definiti i requisiti funzionali e non funzionali e infine verranno esposti i requisiti di front-end e di back-end.
+\end{description}
+\clearpage
+\section{Obiettivi del progetto}
+\begin{description}
+    \item[] Data la complessità della ricerca degli eventi presenti a Trento, siamo giunti alla conclusione che sarebbe utile un'applicazione raggruppante tutti gli eventi della serata, presenti in città e dintorni.
+    \item[] Nello specifico le funzionalità prevedono che:
+        \begin{itemize}
+            \item L'\textbf{utente semplice} possa visualizzare un calendario (Mensile, Settimanale, Giornaliero) nel quale verranno segnati gli eventi, visualizzati con Titolo e Immagine;
+            \item L'utente, una volta selezionato un evento, possa visualizzarne la descrizione (inclusa la posizione visualizzata tramite una mappa).
+            \item Effettuando l'accesso (\textbf{utente registrato}), l'utente possa:
+                  \begin{itemize}
+                      \item Salvarsi gli eventi (Preferiti);
+                      \item Ricevere notifiche (via mail)
+                      \item Salvarsi le proprie preferenze (Filtri);
+                      \item Indicare se parteciperà o meno all'evento;
+                      \item Visualizzare tutte le funzionalità dell'utente semplice;
+                  \end{itemize}
+            \item L'\textbf{utente con privilegi} possa inserire, modificare ed eliminare eventi. \\
+                  L'evento sarà creato tramite un form precompilato:
+                  \begin{itemize}
+                      \item Immagine;
+                      \item Descrizione;
+                      \item Tag;
+                      \item Orario;
+                      \item Luogo (Posizione/Indirizzo);
+                  \end{itemize}
+            \item L'\textbf{utente amministratore} abbia privilegi unici quali:
+                  \begin{itemize}
+                      \item Consegna e revoca dei privilegi agli altri utenti;
+                      \item Cancellazione di eventi;
+                      \item Possibilità d'inviare avvisi di manutenzione, o simili, agli altri utenti loggati (mail);
+                      \item Accesso a tutte le altre funzionalità;
+                  \end{itemize}
+        \end{itemize}
+\end{description}
+\clearpage
+\end{document}
