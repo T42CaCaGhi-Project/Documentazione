@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
 
 
 \graphicspath{ {./images/} }
@@ -19,10 +20,13 @@
 
 \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 
-\setcounter{section}{-1}
+\titleformat{\requisitoFunz}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\requisitoFunz}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \title{\textbf{\Huge Analisi dei Requisiti}}
-\author{Edoardo Ghirardello, Giulio Cappelli, Elia Casotti \\ Gruppo T42}
+\author{Edoardo Ghirardello, Giulio Cappelli, Elia Casotti \\ \\ Gruppo T42}
 \date{2022}
 
 
@@ -36,42 +40,123 @@
 
 \section{Scopo del documento}
 \begin{description}
-    \item[] In questo documento si riporta la descrizione e il funzionamento dell'applicazione "NOME" in linguaggio naturale.
+    \item[] In questo documento si riporta la descrizione e il funzionamento dell'applicazione "Fen Festa" in linguaggio naturale.
     \item[] Verranno analizzati gli obiettivi del progetto, definiti i requisiti funzionali e non funzionali e infine verranno esposti i requisiti di front-end e di back-end.
 \end{description}
 \clearpage
 \section{Obiettivi del progetto}
 \begin{description}
-    \item[] Data la complessità della ricerca degli eventi presenti a Trento, siamo giunti alla conclusione che sarebbe utile un'applicazione raggruppante tutti gli eventi della serata, presenti in città e dintorni.
-    \item[] Nello specifico le funzionalità prevedono che:
+    \item[] Data la difficoltà nella ricerca di attività serali con cui potersi svagare a Trento, siamo giunti alla conclusione che sarebbe utile un’applicazione raggruppante tutti gli eventi disponibili nelle varie serate, presenti in città e dintorni.
+    \item[] L’applicazione, chiamata “Fen Festa”:
         \begin{itemize}
-            \item L'\textbf{utente semplice} possa visualizzare un calendario (Mensile, Settimanale, Giornaliero) nel quale verranno segnati gli eventi, visualizzati con Titolo e Immagine;
-            \item L'utente, una volta selezionato un evento, possa visualizzarne la descrizione (inclusa la posizione visualizzata tramite una mappa).
-            \item Effettuando l'accesso (\textbf{utente registrato}), l'utente possa:
-                  \begin{itemize}
-                      \item Salvarsi gli eventi (Preferiti);
-                      \item Ricevere notifiche (via mail)
-                      \item Salvarsi le proprie preferenze (Filtri);
-                      \item Indicare se parteciperà o meno all'evento;
-                      \item Visualizzare tutte le funzionalità dell'utente semplice;
-                  \end{itemize}
-            \item L'\textbf{utente con privilegi} possa inserire, modificare ed eliminare eventi. \\
-                  L'evento sarà creato tramite un form precompilato:
-                  \begin{itemize}
-                      \item Immagine;
-                      \item Descrizione;
-                      \item Tag;
-                      \item Orario;
-                      \item Luogo (Posizione/Indirizzo);
-                  \end{itemize}
-            \item L'\textbf{utente amministratore} abbia privilegi unici quali:
-                  \begin{itemize}
-                      \item Consegna e revoca dei privilegi agli altri utenti;
-                      \item Cancellazione di eventi;
-                      \item Possibilità d'inviare avvisi di manutenzione, o simili, agli altri utenti loggati (mail);
-                      \item Accesso a tutte le altre funzionalità;
-                  \end{itemize}
+            \item aiuta gli utenti base a trovare la proposta che fa per loro, facendo visualizzare un calendario nel quale sono segnati tutti gli eventi disponibili in quella serata (o nelle successive), coadiuvati da un’immagine, un titolo, posizione e una descrizione dell’evento
+            \item l’utente può, oltre che salvare nei preferiti l’evento, comunicare la sua partecipazione
+            \item permette agli organizzatori di eventi, gestori di bar e simili, di inserire le loro proposte nell’applicazione, tramite un form precompilato
+            \item permette di salvarsi gli eventi a cui l’utente è interessato e a poter ricevere una notifica nella giornata in cui sono stati programmati
         \end{itemize}
 \end{description}
 \clearpage
+\section{Requisiti}
+\begin{description}
+    \item[] Vengono definiti 4 tipi di utente:
+        \begin{itemize}
+            \item Utente non registrato (\textbf{UNR})
+            \item Utente registrato (\textbf{UR})
+            \item Utente organizzatore (\textbf{UO})
+            \item Utente admin (\textbf{UA})
+        \end{itemize}
+\end{description}
+\subsection{Requisiti Funzionali (RF)}
+\subsubsection{Visualizzazione eventi}
+\begin{description}
+    \item[] Si applica a: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
+    \item[] L'utente può visualizzare l'elenco degli eventi attraverso un calendario (Giornaliero, Settimanale, Mensile) o può visualizzare una mappa indicante gli eventi del giorno con la loro posizione
+\end{description}
+\subsubsection{Ricerca Eventi}
+\begin{description}
+    \item[] Si applica a: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
+    \item[] L'utente può ricercare un evento specifico tramite keyword o tag ottenendo in risposta una lista di risultati inerenti
+\end{description}
+\subsubsection{Visualizzazione descrizione evento (Utente Non Registrato)}
+\begin{description}
+    \item[] Si applica a: \textbf{UNR}
+    \item[] L'utente non registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, visualizzando:
+        \begin{itemize}
+            \item Immagine
+            \item Descrizione
+            \item Tag
+            \item Data e Ora
+            \item Luogo (Posizione/Indirizzo)
+        \end{itemize}
+\end{description}
+\subsubsection{Visualizzazione descrizione evento (Utente Registrato)}
+\begin{description}
+    \item[] Si applica a: \textbf{UR}, \textbf{UO}, \textbf{UA}
+    \item[] L'utente registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, visualizzando:
+        \begin{itemize}
+            \item Immagine
+            \item Descrizione
+            \item Tag
+            \item Data e Ora
+            \item Luogo (Posizione/Indirizzo)
+            \item Tasto "Partecipo"
+            \item Tasto "Salva Evento"
+        \end{itemize}
+\end{description}
+\subsubsection{Creazione evento}
+\begin{description}
+    \item[] Si applica a: \textbf{UO}, \textbf{UA}
+    \item[] L'utente organizzatore o admin possono creare un nuovo evento compilando l'apposito form:
+        \begin{itemize}
+            \item Immagine
+            \item Descrizione
+            \item Tag
+            \item Data e Ora
+            \item Luogo (Posizione/Indirizzo)
+        \end{itemize}
+\end{description}
+\subsubsection{Modifica evento}
+\begin{description}
+    \item[] Si applica a: \textbf{UO}, \textbf{UA}
+    \item[] L'utente organizzatore o admin possono modificare un evento attraverso l'apposito form:
+        \begin{itemize}
+            \item Immagine
+            \item Descrizione
+            \item Tag
+            \item Data e Ora
+            \item Luogo (Posizione/Indirizzo)
+        \end{itemize}
+\end{description}
+\subsubsection{Eliminazione evento}
+\begin{description}
+    \item[] Si applica a: \textbf{UO}, \textbf{UA}
+    \item[] L'utente organizzatore o admin possono eliminare un evento
+\end{description}
+\subsubsection{Creazione account utente}
+\begin{description}
+    \item[] Si applica a: \textbf{UNR}
+    \item[] L'utente non registrato può registrarsi tramite apposito form inserendo
+\end{description}
+\subsubsection{Modifica profilo utente}
+\begin{description}
+    \item[] Si applica a: \textbf{UR}
+    \item[] L'utente registrato può cambiare la propria password ed eliminare il proprio profilo
+\end{description}
+\subsubsection{Modifica profilo utente organizzatore}
+\begin{description}
+    \item[] Si applica a: \textbf{UO}
+    \item[] L'utente organizzatore può scegliere un alias con cui farsi riconoscere e può inserire un immagine di profilo
+    \item[] L'utente registrato può cambiare la propria password ed eliminare il proprio profilo
+\end{description}
+\subsubsection{Richiesta upgrade a utente organizzatore}
+\begin{description}
+    \item[] Si applica a: \textbf{UR}
+    \item[] L'utente registrato può, dalla pagina del proprio profilo, fare richiesta di upgrade a utente organizzatore. Dopo aver compilato apposito form (nome organizzazione e tipologia di eventi di cui si occupa) verrà inviata una richiesta all'amministratore (mail)
+\end{description}
+\subsubsection{Consegna e Revoca Privilegi}
+\begin{description}
+    \item[] Si applica a: \textbf{UA}
+    \item[] L'utente admin può cambiare i permessi degli altri utenti, rendendoli \textbf{UO} oppure declassarli a \textbf{UR}
+\end{description}
+\subsection{Requisiti Non Funzionali (RNF)}
 \end{document}
