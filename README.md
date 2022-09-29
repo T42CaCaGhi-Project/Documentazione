@@ -77,7 +77,7 @@ Project Link: [https://github.com/T42CaCaGhi-Project](https://github.com/T42CaCa
 [contributors-url]: https://github.com/T42CaCaGhi-Project/Documentazione/graphs/contributors
 
 [issues-shield]: https://img.shields.io/github/issues/T42CaCaGhi-Project/Documentazione.svg?style=flat
-[issues-url]: https://github.com/github_username/repo_name/issues
+[issues-url]: https://github.com/T42CaCaGhi-Project/Documentazion/issues
 
 [LaTeX]: https://img.shields.io/badge/latex-%23008080.svg??style=flat&logo=latex&logoColor=white
 [latex-url]: https://www.latex-project.org/
