@@ -7,7 +7,6 @@
 \usepackage{graphicx}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[hidelinks]{hyperref}
-\usepackage{titlesec}
 
 
 \graphicspath{ {./images/} }
@@ -20,15 +19,12 @@
 
 \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 
-\titleformat{\requisitoFunz}
-{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-\titlespacing*{\requisitoFunz}
-{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \title{\textbf{\Huge Analisi dei Requisiti}}
 \author{Edoardo Ghirardello, Giulio Cappelli, Elia Casotti \\ \\ Gruppo T42}
 \date{2022}
 
+\let\origthesubsubsection\thesubsubsection
 
 \begin{document}
 
@@ -51,7 +47,7 @@
         \begin{itemize}
             \item aiuta gli utenti base a trovare la proposta che fa per loro, facendo visualizzare un calendario nel quale sono segnati tutti gli eventi disponibili in quella serata (o nelle successive), coadiuvati da un’immagine, un titolo, posizione e una descrizione dell’evento
             \item l’utente può, oltre che salvare nei preferiti l’evento, comunicare la sua partecipazione
-            \item permette agli organizzatori di eventi, gestori di bar e simili, di inserire le loro proposte nell’applicazione, tramite un form precompilato
+            \item permette agli organizzatori di eventi, gestori di bar e simili, di    inserire le loro proposte nell’applicazione, tramite un form precompilato
             \item permette di salvarsi gli eventi a cui l’utente è interessato e a poter ricevere una notifica nella giornata in cui sono stati programmati
         \end{itemize}
 \end{description}
@@ -67,17 +63,18 @@
         \end{itemize}
 \end{description}
 \subsection{Requisiti Funzionali (RF)}
-\subsubsection{Visualizzazione eventi}
+\renewcommand\thesubsubsection{RF\arabic{subsubsection}}
+\subsubsection{Visualizzazione eventi} \label{rf_1}
 \begin{description}
     \item[] Si applica a: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] L'utente può visualizzare l'elenco degli eventi attraverso un calendario (Giornaliero, Settimanale, Mensile) o può visualizzare una mappa indicante gli eventi del giorno con la loro posizione
 \end{description}
-\subsubsection{Ricerca Eventi}
+\subsubsection{Ricerca Eventi} \label{rf_2}
 \begin{description}
     \item[] Si applica a: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] L'utente può ricercare un evento specifico tramite keyword o tag ottenendo in risposta una lista di risultati inerenti
 \end{description}
-\subsubsection{Visualizzazione descrizione evento (Utente Non Registrato)}
+\subsubsection{Visualizzazione descrizione evento (Utente Non Registrato)} \label{rf_3}
 \begin{description}
     \item[] Si applica a: \textbf{UNR}
     \item[] L'utente non registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, visualizzando:
@@ -89,7 +86,7 @@
             \item Luogo (Posizione/Indirizzo)
         \end{itemize}
 \end{description}
-\subsubsection{Visualizzazione descrizione evento (Utente Registrato)}
+\subsubsection{Visualizzazione descrizione evento (Utente Registrato)} \label{rf_4}
 \begin{description}
     \item[] Si applica a: \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] L'utente registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, visualizzando:
@@ -103,7 +100,7 @@
             \item Tasto "Salva Evento"
         \end{itemize}
 \end{description}
-\subsubsection{Creazione evento}
+\subsubsection{Creazione evento} \label{rf_5}
 \begin{description}
     \item[] Si applica a: \textbf{UO}, \textbf{UA}
     \item[] L'utente organizzatore o admin possono creare un nuovo evento compilando l'apposito form:
@@ -115,7 +112,7 @@
             \item Luogo (Posizione/Indirizzo)
         \end{itemize}
 \end{description}
-\subsubsection{Modifica evento}
+\subsubsection{Modifica evento} \label{rf_6}
 \begin{description}
     \item[] Si applica a: \textbf{UO}, \textbf{UA}
     \item[] L'utente organizzatore o admin possono modificare un evento attraverso l'apposito form:
@@ -127,36 +124,87 @@
             \item Luogo (Posizione/Indirizzo)
         \end{itemize}
 \end{description}
-\subsubsection{Eliminazione evento}
+\subsubsection{Eliminazione evento} \label{rf_7}
 \begin{description}
     \item[] Si applica a: \textbf{UO}, \textbf{UA}
     \item[] L'utente organizzatore o admin possono eliminare un evento
 \end{description}
-\subsubsection{Creazione account utente}
+\subsubsection{Creazione account utente} \label{rf_8}
 \begin{description}
     \item[] Si applica a: \textbf{UNR}
     \item[] L'utente non registrato può registrarsi tramite apposito form inserendo
 \end{description}
-\subsubsection{Modifica profilo utente}
+\subsubsection{Modifica profilo utente} \label{rf_9}
 \begin{description}
     \item[] Si applica a: \textbf{UR}
     \item[] L'utente registrato può cambiare la propria password ed eliminare il proprio profilo
 \end{description}
-\subsubsection{Modifica profilo utente organizzatore}
+\subsubsection{Modifica profilo utente organizzatore} \label{rf_10}
 \begin{description}
     \item[] Si applica a: \textbf{UO}
     \item[] L'utente organizzatore può scegliere un alias con cui farsi riconoscere e può inserire un immagine di profilo
     \item[] L'utente registrato può cambiare la propria password ed eliminare il proprio profilo
 \end{description}
-\subsubsection{Richiesta upgrade a utente organizzatore}
+\subsubsection{Richiesta upgrade a utente organizzatore} \label{rf_11}
 \begin{description}
     \item[] Si applica a: \textbf{UR}
     \item[] L'utente registrato può, dalla pagina del proprio profilo, fare richiesta di upgrade a utente organizzatore. Dopo aver compilato apposito form (nome organizzazione e tipologia di eventi di cui si occupa) verrà inviata una richiesta all'amministratore (mail)
 \end{description}
-\subsubsection{Consegna e Revoca Privilegi}
+\subsubsection{Consegna e Revoca Privilegi} \label{rf_12}
 \begin{description}
     \item[] Si applica a: \textbf{UA}
     \item[] L'utente admin può cambiare i permessi degli altri utenti, rendendoli \textbf{UO} oppure declassarli a \textbf{UR}
 \end{description}
+\clearpage
+\renewcommand\thesubsubsection{\origthesubsubsection}
 \subsection{Requisiti Non Funzionali (RNF)}
+\renewcommand\thesubsubsection{RNF\arabic{subsubsection}}
+\subsubsection{Privacy} \label{rnf_1}
+\begin{description}
+    \item[] L’applicazione deve essere progettata e realizzata in ottemperanza alle vigenti disposizioni di legge in materia di tutela della privacy e trattamento dei dati, nello specifico anche al Regolamento Europeo per la protezione dei dati (GDPR).
+    \item[] L’applicazione non permetterà ai suoi operatori di conoscere alcuna informazione personale (a esclusione del DPO) sui clienti, eccetto il nome utente
+\end{description}
+\subsubsection{Sicurezza} \label{rnf_2}
+\begin{description}
+    \item[] L’applicazione deve garantire la riservatezza delle informazioni. \\
+        È necessario assicurarsi che ogni utente veda e possa vedere solamente i propri dati.
+\end{description}
+\subsubsection{Scalabilità} \label{rnf_3}
+\begin{description}
+    \item[] L'applicazione deve garantire l'accesso simultaneo di un numero crescente e variabile di utenti
+    \item[] Deve garantire l'accesso simultaneo ad almeno 100 utenti
+\end{description}
+\subsubsection{Affidabilità} \label{rnf_4}
+\begin{description}
+    \item[] Il sistema si occupa di eseguire backup periodici per evitare perdite dei dati degli utenti
+\end{description}
+\subsubsection{Memorizzazione} \label{rnf_5}
+\begin{description}
+    \item[] I dati utente e i vari eventi vengono salvati su database senza quindi occupare più memoria del necessario all'utente
+\end{description}
+\subsubsection{Compatibilità e Accessibilità} \label{rnf_6}
+\begin{description}
+    \item[] L’applicazione deve essere compatibile con Android 8.0 / iOS 12 e successivi e i principali Browser web (Chrome, Safari, Edge, \dots)
+\end{description}
+\subsubsection{Supportabilità} \label{rnf_7}
+\begin{description}
+    \item[] L'app è facilmente utilizzabile tramite web o download da app store
+\end{description}
+\subsubsection{Facilità di utilizzo} \label{rnf_8}
+\begin{description}
+    \item[] Il sistema permette d'ingrandire la mappa visualizzando meglio la locazione dell'evento
+    \item[] Il sistema permette di cambiare tra dark mode e light mode
+    \item[] Il sistema permette di spostarsi tra le varie schermate in modo intuitivo
+\end{description}
+\renewcommand\thesubsubsection{\origthesubsubsection}
+\clearpage
+\subsection{Front-End}
+\begin{description}
+    \item[]
+\end{description}
+\clearpage
+\subsection{Back-End}
+\begin{description}
+    \item[]
+\end{description}
 \end{document}
