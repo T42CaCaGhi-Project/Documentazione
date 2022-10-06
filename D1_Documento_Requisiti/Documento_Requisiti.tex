@@ -89,7 +89,7 @@
 \subsubsection{Visualizzazione descrizione evento (Utente Registrato)} \label{rf_4}
 \begin{description}
     \item[] Si applica a: \textbf{UR}, \textbf{UO}, \textbf{UA}
-    \item[] L'utente registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, visualizzando:
+    \item[] L'utente registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, quali:
         \begin{itemize}
             \item Immagine
             \item Descrizione
@@ -129,28 +129,41 @@
     \item[] Si applica a: \textbf{UO}, \textbf{UA}
     \item[] L'utente organizzatore o admin possono eliminare un evento
 \end{description}
-\subsubsection{Creazione account utente} \label{rf_8}
+\subsubsection{Login} \label{rf_8}
+\begin{description}
+    \item[] Si applica a: \textbf{UNR}
+    \item[] L'utente non registrato se ha già un account può effettuare il login inserendo:
+        \begin{itemize}
+            \item Email
+            \item Password
+        \end{itemize}
+\end{description}
+\subsubsection{Creazione account utente} \label{rf_9}
 \begin{description}
     \item[] Si applica a: \textbf{UNR}
     \item[] L'utente non registrato può registrarsi tramite apposito form inserendo
+        \begin{itemize}
+            \item Email
+            \item Password
+        \end{itemize}
 \end{description}
-\subsubsection{Modifica profilo utente} \label{rf_9}
+\subsubsection{Modifica profilo utente} \label{rf_10}
 \begin{description}
     \item[] Si applica a: \textbf{UR}
     \item[] L'utente registrato può cambiare la propria password ed eliminare il proprio profilo
 \end{description}
-\subsubsection{Modifica profilo utente organizzatore} \label{rf_10}
+\subsubsection{Modifica profilo utente organizzatore} \label{rf_11}
 \begin{description}
     \item[] Si applica a: \textbf{UO}
     \item[] L'utente organizzatore può scegliere un alias con cui farsi riconoscere e può inserire un immagine di profilo
-    \item[] L'utente registrato può cambiare la propria password ed eliminare il proprio profilo
+    \item[] L'utente organizzatore può cambiare la propria password ed eliminare il proprio profilo
 \end{description}
-\subsubsection{Richiesta upgrade a utente organizzatore} \label{rf_11}
+\subsubsection{Richiesta upgrade a utente organizzatore} \label{rf_12}
 \begin{description}
     \item[] Si applica a: \textbf{UR}
     \item[] L'utente registrato può, dalla pagina del proprio profilo, fare richiesta di upgrade a utente organizzatore. Dopo aver compilato apposito form (nome organizzazione e tipologia di eventi di cui si occupa) verrà inviata una richiesta all'amministratore (mail)
 \end{description}
-\subsubsection{Consegna e Revoca Privilegi} \label{rf_12}
+\subsubsection{Consegna e Revoca Privilegi} \label{rf_13}
 \begin{description}
     \item[] Si applica a: \textbf{UA}
     \item[] L'utente admin può cambiare i permessi degli altri utenti, rendendoli \textbf{UO} oppure declassarli a \textbf{UR}
@@ -162,12 +175,12 @@
 \subsubsection{Privacy} \label{rnf_1}
 \begin{description}
     \item[] L’applicazione deve essere progettata e realizzata in ottemperanza alle vigenti disposizioni di legge in materia di tutela della privacy e trattamento dei dati, nello specifico anche al Regolamento Europeo per la protezione dei dati (GDPR).
-    \item[] L’applicazione non permetterà ai suoi operatori di conoscere alcuna informazione personale (a esclusione del DPO) sui clienti, eccetto il nome utente
+    \item[] L’applicazione non permetterà ai suoi operatori di conoscere alcuna informazione personale (a esclusione del DPO) sui clienti, eccetto la mail
 \end{description}
 \subsubsection{Sicurezza} \label{rnf_2}
 \begin{description}
-    \item[] L’applicazione deve garantire la riservatezza delle informazioni. \\
-        È necessario assicurarsi che ogni utente veda e possa vedere solamente i propri dati.
+    \item[] L’applicazione deve garantire la riservatezza delle informazioni.
+    \item[] È necessario assicurarsi che ogni utente veda e possa vedere solamente i propri dati.
 \end{description}
 \subsubsection{Scalabilità} \label{rnf_3}
 \begin{description}
@@ -188,7 +201,7 @@
 \end{description}
 \subsubsection{Supportabilità} \label{rnf_7}
 \begin{description}
-    \item[] L'app è facilmente utilizzabile tramite web o download da app store
+    \item[] L'app è facilmente utilizzabile tramite web
 \end{description}
 \subsubsection{Facilità di utilizzo} \label{rnf_8}
 \begin{description}
@@ -198,12 +211,12 @@
 \end{description}
 \renewcommand\thesubsubsection{\origthesubsubsection}
 \clearpage
-\subsection{Front-End}
+\section{Front-End}
 \begin{description}
     \item[]
 \end{description}
 \clearpage
-\subsection{Back-End}
+\section{Back-End}
 \begin{description}
     \item[]
 \end{description}
