@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
 
 
 \graphicspath{ {./images/} }
@@ -47,7 +48,7 @@
         \begin{itemize}
             \item aiuta gli utenti base a trovare la proposta che fa per loro, facendo visualizzare un calendario nel quale sono segnati tutti gli eventi disponibili in quella serata (o nelle successive), coadiuvati da un’immagine, un titolo, posizione e una descrizione dell’evento
             \item l’utente può, oltre che salvare nei preferiti l’evento, comunicare la sua partecipazione
-            \item permette agli organizzatori di eventi, gestori di bar e simili, di    inserire le loro proposte nell’applicazione, tramite un form precompilato
+            \item permette agli organizzatori di eventi, gestori di bar e simili, di inserire le loro proposte nell’applicazione, tramite un form precompilato
             \item permette di salvarsi gli eventi a cui l’utente è interessato e a poter ricevere una notifica nella giornata in cui sono stati programmati
         \end{itemize}
 \end{description}
@@ -79,6 +80,7 @@
     \item[] Si applica a: \textbf{UNR}
     \item[] L'utente non registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, visualizzando:
         \begin{itemize}
+            \item Nome
             \item Immagine
             \item Descrizione
             \item Tag
@@ -91,6 +93,7 @@
     \item[] Si applica a: \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] L'utente registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, quali:
         \begin{itemize}
+            \item Nome
             \item Immagine
             \item Descrizione
             \item Tag
@@ -105,6 +108,7 @@
     \item[] Si applica a: \textbf{UO}, \textbf{UA}
     \item[] L'utente organizzatore o admin possono creare un nuovo evento compilando l'apposito form:
         \begin{itemize}
+            \item Nome
             \item Immagine
             \item Descrizione
             \item Tag
@@ -117,6 +121,7 @@
     \item[] Si applica a: \textbf{UO}, \textbf{UA}
     \item[] L'utente organizzatore o admin possono modificare un evento attraverso l'apposito form:
         \begin{itemize}
+            \item Nome
             \item Immagine
             \item Descrizione
             \item Tag
@@ -213,7 +218,49 @@
 \clearpage
 \section{Front-End}
 \begin{description}
-    \item[]
+    \item[] In questa sezione vengono riportati alcuni mock-up del frontend
+        \begin{enumerate}
+            \item Pagina home con calendario
+            \item Pagina home con mappa
+            \item Pagina creazione evento
+        \end{enumerate}
+\end{description}
+\subsection{Pagina home con calendario}
+\begin{description}
+    \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
+    \item[] Requisiti interessati: \hyperref[rf_1]{\textbf{RF1}}, \hyperref[rf_2]{\textbf{RF2}}
+    \item[] \begin{center}
+            \includegraphics[scale=0.6]{Home_Calendario.png}
+        \end{center}
+    \item[] In questa schermata si possono visualizzare gli eventi giornalieri, settimanali o mensili.
+    \item[] Selezionando un giorno nel calendario compariranno nell'elenco solo gli eventi relativi a quella giornata.
+    \item[] Cliccando su un evento se ne potranno visualizzare i dettagli
+    \item[] Premendo l'icona "\faIcon{search}" si potrà ricercare un evento specifico
+    \item[] Premendo l'icona "\faIcon{cog} si potranno cambiare le impostazioni dell'account e di sistema
+    \item[] Premendo l'icona "\faIcon{pencil-alt}" si potrà creare un nuovo evento \\ (visibile e utilizzabile solo se si dispone dell'autorizzazione necessaria: \textbf{UO}, \textbf{UA})
+\end{description}
+\clearpage
+\subsection{Pagina home con mappa}
+\begin{description}
+    \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
+    \item[] Requisiti interessati: \hyperref[rf_1]{\textbf{RF1}}, \hyperref[rf_2]{\textbf{RF2}}
+    \item[] \begin{center}
+            \includegraphics[scale=0.6]{Home_Mappa.png}
+        \end{center}
+    \item[] In questa schermata viene visualizzata la mappa con indicata la posizione degli eventi del giorno in base all'indirizzo scelto al momento della creazione.
+    \item[] Cliccando su un "\faIcon{map-marker-alt}" si potranno visualizzare i dettagli dell'evento.
+    \item[] Premendo l'icona "\faIcon{search}" si potrà ricercare un evento specifico
+    \item[] Premendo l'icona "\faIcon{cog}" si potranno cambiare le impostazioni dell'account e di sistema
+    \item[] Premendo l'icona "\faIcon{pencil-alt}" si potrà creare un nuovo evento \\ (visibile e utilizzabile solo se si dispone dell'autorizzazione necessaria: \textbf{UO}, \textbf{UA})
+\end{description}
+\clearpage
+\subsection{Pagina creazione evento}
+\begin{description}
+    \item[] Utenti utilizzatori: \textbf{UO}, \textbf{UA}
+    \item[] Requisiti interessati: \hyperref[rf_5]{\textbf{RF5}}
+    \item[] \begin{center}
+            \includegraphics[scale=0.6]{Home_Mappa.png}
+        \end{center}
 \end{description}
 \clearpage
 \section{Back-End}

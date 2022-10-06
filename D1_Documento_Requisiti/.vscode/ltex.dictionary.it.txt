@@ -11,3 +11,9 @@ Supportabilità
 dark
 light
 store
+mock-up
+home
+search
+cog
+pencil-alt
+map-marker-alt
