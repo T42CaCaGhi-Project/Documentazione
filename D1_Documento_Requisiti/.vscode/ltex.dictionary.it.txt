@@ -17,3 +17,5 @@ search
 cog
 pencil-alt
 map-marker-alt
+pc
+Leaflet
