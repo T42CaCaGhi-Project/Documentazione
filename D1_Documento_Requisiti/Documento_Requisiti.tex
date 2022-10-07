@@ -152,6 +152,7 @@
         \begin{itemize}
             \item Email
             \item Password
+            \item Conferma della Password
         \end{itemize}
 \end{description}
 \subsubsection{Modifica profilo utente} \label{rf_10}
@@ -239,10 +240,11 @@
     \item[] Selezionando un giorno nel calendario compariranno nell'elenco solo gli eventi relativi a quella giornata.
     \item[] Cliccando su un evento se ne potranno visualizzare i dettagli
     \item[] Premendo l'icona "\faIcon{search}" si potrà ricercare un evento specifico
-    \item[] Premendo l'icona "\faIcon{cog} si potranno cambiare le impostazioni dell'account e di sistema
+    \item[] Premendo l'icona "\faIcon{cog}" si potranno cambiare le impostazioni dell'account e di sistema
     \item[] Premendo l'icona "\faIcon{pencil-alt}" si potrà creare un nuovo evento \\ (visibile e utilizzabile solo se si dispone dell'autorizzazione necessaria: \textbf{UO}, \textbf{UA})
+    \item[] È possibile passare dalla visualizzazione del calendario a quella della mappa tramite in basso presenti in entrambe le schermate.
+    \item[] Nel caso in cui un evento faccia parte dei preferiti dell'utente (disponibili solo dopo il login) vi comparirà accanto una stella.
 \end{description}
-\clearpage
 \subsection{Pagina home con mappa}
 \begin{description}
     \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
@@ -255,6 +257,7 @@
     \item[] Premendo l'icona "\faIcon{search}" si potrà ricercare un evento specifico
     \item[] Premendo l'icona "\faIcon{cog}" si potranno cambiare le impostazioni dell'account e di sistema
     \item[] Premendo l'icona "\faIcon{pencil-alt}" si potrà creare un nuovo evento \\ (visibile e utilizzabile solo se si dispone dell'autorizzazione necessaria: \textbf{UO}, \textbf{UA})
+    \item[] È possibile passare dalla visualizzazione del calendario a quella della mappa tramite in basso presenti in entrambe le schermate.
 \end{description}
 \clearpage
 \subsection{Pagina creazione evento}
@@ -262,36 +265,64 @@
     \item[] Utenti utilizzatori: \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_5]{\textbf{RF5}}
     \item[] \begin{center}
-            \includegraphics[scale=0.6]{Home_Mappa.png}
+            \includegraphics[scale=0.6]{Aggiungi_Evento.png}
         \end{center}
+    \item[] In questa schermata è presente il form per la creazione di un nuovo evento
+    \item[] L'utente deve inserire i dati richiesti (nome, data e ora, tags, descrizione, immagine e luogo) nei rispettivi campi presenti a schermo.
+    \item[] È presente il tasto crea per confermare la creazione dell'evento o una croce in alto per annullare la compilazione.
 \end{description}
 \clearpage
 \subsection{Pagina visualizza evento}
 \begin{description}
     \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_3]{\textbf{RF3}}, \hyperref[rf_4]{\textbf{RF4}}
+    \item[] \begin{center}
+            \includegraphics[scale=0.6]{Aggiungi_Evento.png}
+        \end{center}
+    \item[] Vengono visualizzati a schermo i dettagli dell'evento selezionato: nome, immagine, descrizione, tag, data e ora, luogo, numero partecipanti.
+    \item[] Se l'utente è l'organizzatore, o un admin, potrà inoltre visualizzare il tasto modifica.
 \end{description}
 \clearpage
+\subsection{Pagina modifica evento}
+\begin{description}
+    \item[] Utenti utilizzatori: \textbf{UO}, \textbf{UA}
+    \item[] Requisiti interessati: \hyperref[rf_6]{\textbf{RF6}}, \hyperref[rf_7]{\textbf{RF7}}
+    \item[] La schermata è pressoché identica a quella della creazione evento, con unica differenza la rimozione del pulsante crea sostituito con "modifica" e "elimina".
+\end{description}
 \subsection{Pagina login}
 \begin{description}
     \item[] Utenti utilizzatori: \textbf{UNR}
     \item[] Requisiti interessati: \hyperref[rf_8]{\textbf{RF8}}
+    \item[] Sono presenti 2 campi da compilare: e-mail, password.
 \end{description}
-\clearpage
 \subsection{Pagina impostazioni}
 \begin{description}
     \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_10]{\textbf{RF10}}, \hyperref[rf_11]{\textbf{RF11}}, \hyperref[rf_12]{\textbf{RF12}}, \hyperref[rf_13]{\textbf{RF13}}
+    \item[] Dalla pagina impostazioni è possibile accedere a diverse funzionalità:
+    \begin{enumerate}
+        \item creazione account \textbf{UNR}
+        \item modifica password \textbf{UR}, \textbf{UO}
+        \item eliminazione account \textbf{UR}, \textbf{UO}
+        \item richiesta upgrade ad account da organizzatore \textbf{UR}
+        \item switch tema chiaro / scuro \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
+    \end{enumerate}
+    \item[] L'utente admin può inoltre elargire e revocare privilegi da organizzatore ad altri utenti inserendo la e-mail dell'interessato.
 \end{description}
-\clearpage
 \subsection{Pagina creazione account}
 \begin{description}
-    \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
-    \item[] Requisiti interessati: \hyperref[rf_10]{\textbf{RF10}}, \hyperref[rf_11]{\textbf{RF11}}, \hyperref[rf_12]{\textbf{RF12}}
+    \item[] Utenti utilizzatori: \textbf{UNR}
+    \item[] Requisiti interessati: \hyperref[rf_9]{\textbf{RF9}}
+    \item[] L'utente deve compilare tre campi: e-mail, password, conferma password.
 \end{description}
 \clearpage
 \section{Back-End}
 \begin{description}
-    \item[] Leaflet
+    \item[] \textbf{Leaflet} \\
+        Il sistema utilizza Leaflet per creare la mappa interattiva con indicatori customizzati per gli eventi giornalieri
+    \item[] \textbf{qualcosa per la mail}
+    \item[] \textbf{mongodb} \\
+        Il sistema utilizza mongodb come database NOSQL in cui salvare dati relativi agli eventi e dati necessari all'autorizzazione dei diversi utenti.
+    \item[] \textbf{altro} \\
 \end{description}
 \end{document}
