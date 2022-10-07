@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/T42CaCaGhi-Project/Documentazione">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="80">
   </a>
 <h2 align="center">Documentazione T42 <br>
 "Fen Festa"</h2>
