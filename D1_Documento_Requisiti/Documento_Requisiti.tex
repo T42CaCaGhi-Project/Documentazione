@@ -277,9 +277,10 @@
     \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_3]{\textbf{RF3}}, \hyperref[rf_4]{\textbf{RF4}}
     \item[] \begin{center}
-            \includegraphics[scale=0.6]{Aggiungi_Evento.png}
+            \includegraphics[scale=0.6]{Visualizza_Evento.png}
         \end{center}
     \item[] Vengono visualizzati a schermo i dettagli dell'evento selezionato: nome, immagine, descrizione, tag, data e ora, luogo, numero partecipanti.
+    \item[] L'utente registrato ha accesso hai pulsanti "Partecipo" e "Salva Evento" che rispettivamente segnalano l'utente come partecipante o salvano l'evento nei preferiti dell'utente stesso.
     \item[] Se l'utente è l'organizzatore, o un admin, potrà inoltre visualizzare il tasto modifica.
 \end{description}
 \clearpage
@@ -295,17 +296,23 @@
     \item[] Requisiti interessati: \hyperref[rf_8]{\textbf{RF8}}
     \item[] Sono presenti 2 campi da compilare: e-mail, password.
 \end{description}
+\clearpage
 \subsection{Pagina impostazioni}
 \begin{description}
     \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_10]{\textbf{RF10}}, \hyperref[rf_11]{\textbf{RF11}}, \hyperref[rf_12]{\textbf{RF12}}, \hyperref[rf_13]{\textbf{RF13}}
+    \item[] \begin{center}
+        \includegraphics[scale=0.6]{Impostazioni.png}
+    \end{center}
     \item[] Dalla pagina impostazioni è possibile accedere a diverse funzionalità:
     \begin{enumerate}
         \item creazione account \textbf{UNR}
+        \item visualizzazione informazioni account \textbf{UR}, \textbf{UO}, \textbf{UA}
         \item modifica password \textbf{UR}, \textbf{UO}
         \item eliminazione account \textbf{UR}, \textbf{UO}
         \item richiesta upgrade ad account da organizzatore \textbf{UR}
         \item switch tema chiaro / scuro \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
+        \item logout \textbf{UR}, \textbf{UO}, \textbf{UA}
     \end{enumerate}
     \item[] L'utente admin può inoltre elargire e revocare privilegi da organizzatore ad altri utenti inserendo la e-mail dell'interessato.
 \end{description}
@@ -313,16 +320,29 @@
 \begin{description}
     \item[] Utenti utilizzatori: \textbf{UNR}
     \item[] Requisiti interessati: \hyperref[rf_9]{\textbf{RF9}}
+    \item[] \begin{center}
+        \includegraphics[scale=0.6]{Crea_Account.png}
+    \end{center}
     \item[] L'utente deve compilare tre campi: e-mail, password, conferma password.
 \end{description}
 \clearpage
 \section{Back-End}
+Nel presente capitolo presentiamo i sistemi esterni con cui l’applicazione dovrà interagire per poter funzionare correttamente:
+\begin{enumerate}
+    \item \hyperref[leaflet]{Leaflet}
+    \item \hyperref[TMS]{Transactional mail service}
+    \item \hyperref[mongo]{Mongodb}
+\end{enumerate}
+\subsection{Leaflet \label{leaflet}}
 \begin{description}
-    \item[] \textbf{Leaflet} \\
-        Il sistema utilizza Leaflet per creare la mappa interattiva con indicatori customizzati per gli eventi giornalieri
-    \item[] \textbf{qualcosa per la mail}
-    \item[] \textbf{mongodb} \\
-        Il sistema utilizza mongodb come database NOSQL in cui salvare dati relativi agli eventi e dati necessari all'autorizzazione dei diversi utenti.
-    \item[] \textbf{altro} \\
+    \item[] Il sistema utilizza Leaflet per creare la mappa interattiva con indicatori customizzati per gli eventi giornalieri.
+\end{description}
+\subsection{Transactional Mail Service TBD \label{TMS}}
+\begin{description}
+    \item[] Il sistema utilizza un Transactional Mail Service per ogni tipo di notifica automatica da inviare via mail agli utenti.
+\end{description}
+\subsection{Mongodb \label{mongo}}
+\begin{description}
+    \item[] Il sistema utilizza mongodb come database NOSQL in cui salvare dati relativi agli eventi e dati necessari all'autorizzazione dei diversi utenti.
 \end{description}
 \end{document}
