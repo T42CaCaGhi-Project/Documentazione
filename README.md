@@ -41,7 +41,7 @@ città e dintorni.
 
 ## Roadmap
 
-- [ ] D1 - [Documento dei Requisiti](https://github.com/T42CaCaGhi-Project/Documentazione/tree/main/D1_Documento_Requisiti)
+- [x] D1 - [Documento dei Requisiti](https://github.com/T42CaCaGhi-Project/Documentazione/tree/main/D1_Documento_Requisiti)
 - [ ] D2 -
 - [ ] D3 - 
 - [ ] D4 -
