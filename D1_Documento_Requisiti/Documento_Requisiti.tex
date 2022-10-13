@@ -145,7 +145,12 @@
             \item Password
         \end{itemize}
 \end{description}
-\subsubsection{Creazione account utente} \label{rf_9}
+\subsubsection{Recupero password} \label{rf_9}
+\begin{description}
+    \item[] Si applica a: \textbf{UNR}
+    \item[] L'utente non registrato se si è dimenticato la password può richiedere di resettarla così ne può impostarne un'altra
+\end{description}
+\subsubsection{Creazione account utente} \label{rf_10}
 \begin{description}
     \item[] Si applica a: \textbf{UNR}
     \item[] L'utente non registrato può registrarsi tramite apposito form inserendo
@@ -154,6 +159,11 @@
             \item Password
             \item Conferma della Password
         \end{itemize}
+\end{description}
+\subsubsection{Conferma creazione account} \label{}
+\begin{description}
+    \item[] Si applica a: \textbf{UNR}
+    \item[] L'utente non registrato una volta creato l'account deve confermarlo attraverso un link inviato via mail
 \end{description}
 \subsubsection{Modifica profilo utente} \label{rf_10}
 \begin{description}
@@ -293,8 +303,9 @@
 \subsection{Pagina login}
 \begin{description}
     \item[] Utenti utilizzatori: \textbf{UNR}
-    \item[] Requisiti interessati: \hyperref[rf_8]{\textbf{RF8}}
+    \item[] Requisiti interessati: \hyperref[rf_8]{\textbf{RF8}}, \hyperref[rf_9]{\textbf{RF9}}
     \item[] Sono presenti 2 campi da compilare: e-mail, password.
+    \item[] Se si ha dimenticato la password è presente un tasto per reimpostarla.
 \end{description}
 \clearpage
 \subsection{Pagina impostazioni}
@@ -319,7 +330,7 @@
 \subsection{Pagina creazione account}
 \begin{description}
     \item[] Utenti utilizzatori: \textbf{UNR}
-    \item[] Requisiti interessati: \hyperref[rf_9]{\textbf{RF9}}
+    \item[] Requisiti interessati: \hyperref[rf_10]{\textbf{RF10}}
     \item[] \begin{center}
             \includegraphics[scale=0.6]{Crea_Account.png}
         \end{center}
