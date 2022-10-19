@@ -49,32 +49,273 @@
 \begin{description}
     \item[] Nel seguente capitolo vengono riportati i Requisiti Funzionali (RF) del sistema utilizzando il linguaggio naturale e Use Case Diagram scritti in UML
 \end{description}
-\renewcommand\thesubsection{RF\arabic{subsection}}
-\subsection{Visualizzazione eventi}
-\subsection{Ricerca Eventi}
-\subsection{Visualizzazione descrizione evento (Utente Non Registrato)}
-\subsection{Visualizzazione descrizione evento (Utente Registrato)}
+\renewcommand\thesubsection{}
+\subsection{RF1 Visualizzazione Eventi}
+\subsection{RF2 Ricerca Eventi}
+\subsection{RF3 Visualizzazione Descrizione Evento (Utente Non Registrato)}
+\subsection{RF4 Visualizzazione Descrizione Evento (Utente Registrato)}
 \begin{center}
     \item[] \includegraphics[scale=0.7]{UseCase_1.png}
 \end{center}
-\subsubsection*{Descrizione Use Case "Visualizzazione eventi"}
+\subsubsection*{Descrizione Use Case "Visualizzazione Eventi"}
 \begin{description}
     \item[] Titolo: Visualizzazione Evento
     \item[] Riassunto: Questo Use Case descrive come avviene la visualizzazione di un evento
     \item[] Descrizione:
         \begin{enumerate}
-            \item L'utente UNR, UR, UO o UA accedono alla pagina "Home" dove visualizzeranno la lista degli eventi
-            \item L'utente sceglie il range temporale in cui filtrare gli eventi (Giorno, Settimana, Mese) tramite un selezionatore di data
+            \item Gli utenti UNR, UR, UO o UA accedono alla pagina "Home" dove visualizzeranno la lista degli eventi
+            \item Gli utenti sceglie il range temporale in cui filtrare gli eventi (Giorno, Settimana, Mese) tramite un selezionatore di data
             \item Il sistema poi mostrerà tutti gli eventi aventi la data o il range temporale selezionato
         \end{enumerate}
-        % \item[] Exceptions:
-        %     \begin{description}
-        %         \item[] [exception 1]
-        %     \end{description}
-        % \item[] Extensions:
-        %     \begin{description}
-        %         \item[] [extension 1]
-        %     \end{description}
+\end{description}
+\subsubsection*{Descrizione Use Case "Ricerca Eventi"}
+\begin{description}
+    \item[] Titolo: Ricerca Eventi
+    \item[] Riassunto: Questo Use Case descrive come avviene la ricerca di un evento
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item Gli utenti UNR, UR, UO o UA accedono alla pagina "Home" dove potranno cliccare sull'icona \faIcon{search}
+            \item Una volta selezionata l'icona l'utente successivamente inserisce cosa ricercare (tag o nome dell'evento)
+            \item Il sistema poi mostrerà tutti gli eventi aventi i tag o il nome inseriti
+        \end{enumerate}
+\end{description}
+\subsubsection*{Descrizione Use Case "Visualizzazione Descrizione Evento"}
+\begin{description}
+    \item[] Titolo: Visualizzazione Descrizione Evento
+    \item[] Riassunto: Questo Use Case descrive come avviene la visualizzazione delle informazioni riguardanti un evento
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item Gli utenti UNR, UR, UO o UA accede alla pagina "Home" dove visualizzeranno la lista degli eventi
+            \item L'utente preme su un evento specifico
+            \item Il sistema mostra l'evento nel suo intero mostrando:
+                  \begin{itemize}
+                      \item Nome
+                      \item Immagine
+                      \item Descrizione
+                      \item Tag
+                      \item Data e Ora
+                      \item Luogo (Posizione/Indirizzo)
+                      \item Numero partecipanti
+                  \end{itemize}
+            \item Poi in base a che tipo di utente è: UNR o UR/UO/UA il sistema mostra anche due tasti:
+                  \begin{itemize}
+                      \item Tasto "Partecipo"
+                      \item Tasto "Salva Evento"
+                  \end{itemize}
+                  che permettono a UR, UO, UA di poter salvare l'evento nei preferiti e far sapere agli altri utenti che parteciperà all'evento in questione
+        \end{enumerate}
+\end{description}
+\clearpage
+\subsection{RF5 Creazione Evento}
+\subsection{RF6 Modifica Evento}
+\subsection{RF7 Eliminazione Evento}
+\begin{center}
+    \item[] \includegraphics[scale=0.5]{UseCase_2.png}
+\end{center}
+\subsubsection*{Descrizione Use Case "Creazione Evento"}
+\begin{description}
+    \item[] Titolo: Creazione Evento
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di creazione di un evento
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item Gli utenti UO o UA accedono alla pagina "Home" dove potranno cliccare sull'icona \faIcon{pencil-alt}
+            \item Una volta selezionata l'icona il sistema mostra un form in cui l'utente deve inserire nei campi i dati richiesti:
+                  \begin{itemize}
+                      \item Nome
+                      \item Immagine
+                      \item Descrizione
+                      \item Tag
+                      \item Data e Ora
+                      \item Luogo (Posizione/Indirizzo)
+                  \end{itemize}
+            \item Una volta inseriti i dati il sistema controlla che tutti i campi siano stati compilati \hyperref[exc:5.1]{[exception 1]}
+        \end{enumerate}
+    \item[] Exceptions:
+        \begin{description}
+            \item[] \label{exc:5.1} [exception 1] Tutti i campi devono essere compilati
+        \end{description}
+\end{description}
+\subsubsection*{Descrizione Use Case "Eliminazione Evento"}
+\begin{description}
+    \item[] Titolo: Eliminazione Evento
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di eliminazione di un evento
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item Gli utenti UO o UA accedono alla pagina "Home" dove potranno cliccare su un proprio evento
+            \item Una volta selezionata l'evento, il sistema mostra all'utente la descrizione e i tasti modifica ed elimina
+            \item Cliccando su modifica l'utente proprietario dell'evento accede a un form identico a quello della creazione evento, ma precompilato con i dati inseriti in fase di creazione. Può modificare ogni campo.
+            \item Cliccando in basso su "elimina" l'utente proprietario dell'evento eliminerà l'evento
+        \end{enumerate}
+\end{description}
+\subsubsection*{Descrizione Use Case "Modifica Evento"}
+\begin{description}
+    \item[] Titolo: Modifica Evento
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di modifica di un evento
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item Gli utenti UO o UA accedono alla pagina "Home" dove potranno cliccare su un proprio evento
+            \item Una volta selezionata l'evento, il sistema mostra all'utente la descrizione e i tasti modifica ed elimina
+            \item Cliccando su modifica l'utente proprietario dell'evento accede a un form identico a quello della creazione evento, ma precompilato con i dati inseriti in fase di creazione. Può modificare ogni campo.
+            \item Cliccando in basso su "modifica" l'utente proprietario dell'evento salverà le modifiche apportate ai campi precedenti
+        \end{enumerate}
+\end{description}
+\clearpage
+\subsection{RF8 Login}
+\subsection{RF9 Recupero Password}
+\subsection{RF10 Creazione Account}
+\subsection{RF11 Conferma Creazione Account}
+\begin{center}
+    \item[] \includegraphics[scale=0.5]{UseCase_3.png}
+\end{center}
+\subsubsection*{Descrizione Use Case "Login"}
+\begin{description}
+    \item[] Titolo: Login
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di login
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item L'utente UNR una volta selezionata la pagina "Impostazioni" tramite l'icona \faIcon{cog} può selezionare il tasto "Login" per eseguire l'accesso
+            \item Il sistema successivamente mostra all'utente il form di login dove richiede all'utente di inserire:
+                  \begin{itemize}
+                      \item Email
+                      \item Password
+                  \end{itemize}
+            \item Una volta compilati i campi il sistema controlla che siano stati correttamente compilati \hyperref[exc:8.1]{[exception 1]}
+        \end{enumerate}
+    \item[] Exceptions:
+        \begin{description}
+            \item[] \label{exc:8.1} [exception 1] Tutti i campi devono essere compilati
+        \end{description}
+\end{description}
+\clearpage
+\subsubsection*{Descrizione Use Case "Recupero Password"}
+\begin{description}
+    \item[] Titolo: Recupero Password
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di recupero della password
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item L'utente UNR una volta selezionata la pagina "Impostazioni" tramite l'icona \faIcon{cog} dalla home può selezionare il tasto "Login" per eseguire l'accesso
+            \item Se l'utente non riesce a effettuare il Login poiché non si ricorda la password la può reimpostare tramite il tasto "Reimposta Password"
+            \item Il sistema successivamente mostra all'utente un campo dove inserire la propria mail \hyperref[exc:9.1]{[exception 1]}
+            \item Una volta inserita la mail il sistema invierà tramite un sistema di invio mail una password temporanea che successivamente l'utente dovrà cambiare
+        \end{enumerate}
+    \item[] Exceptions:
+        \begin{description}
+            \item[] \label{exc:9.1} [exception 1] Tutti i campi devono essere compilati
+        \end{description}
+\end{description}
+\subsubsection*{Descrizione Use Case "Creazione Account"}
+\begin{description}
+    \item[] Titolo: Creazione Account
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di creazione di un nuovo account
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item L'utente UNR una volta selezionata la pagina "Impostazioni" tramite l'icona \faIcon{cog} dalla home può selezionare il tasto "Crea Account" per creare un nuovo account
+            \item Il sistema presenta all'utente un form in cui deve inserire:
+                  \begin{itemize}
+                      \item Email
+                      \item Password
+                      \item Conferma Password
+                  \end{itemize}
+            \item Una volta compilato il form il sistema controlla che i campi siano tutti compilati \hyperref[exc:10.1]{[exception 1]} e che "Conferma Password" deve essere uguale al campo "Password" \hyperref[exc:10.2]{[exception 2]}
+            \item Il sistema una volta creato l'account invia tramite sistema di mail una conferma della creazione dell'account (RF11)
+        \end{enumerate}
+    \item[] Exceptions:
+        \begin{description}
+            \item[] \label{exc:10.1} [exception 1] Tutti i campi devono essere compilati
+            \item[] \label{exc:10.2} [exception 1] Il campo "Conferma Password" deve essere uguale al campo "Password"
+        \end{description}
+\end{description}
+\clearpage
+\subsection{RF12 Modifica Profilo}
+\subsection{RF14 Richiesta Upgrade a UO}
+\begin{center}
+    \item[] \includegraphics[scale=0.5]{UseCase_4.png}
+\end{center}
+\subsubsection*{Descrizione Use Case "Modifica Profilo"}
+\begin{description}
+    \item[] Titolo: Modifica Profilo
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di modifica del profilo
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item L'utente UR una volta selezionata la pagina "Impostazioni" tramite l'icona \faIcon{cog} dalla home può selezionare i tasti "Cambio Password" e "Eliminazione Account".
+                  \begin{itemize}
+                      \item Cambio Password: selezionando "Cambio Password" l'utente potrà inserire: nuova password, conferma nuova password \hyperref[exc:12.1]{[exception 1]}\hyperref[exc:12.2]{[exception 2]}
+                      \item Eliminazione Account: selezionando "Eliminazione Account" l'utente potrà eliminare il proprio account. È necessario confermare cliccando su un pop-up
+                  \end{itemize}
+        \end{enumerate}
+    \item[] Exceptions:
+        \begin{description}
+            \item[] \label{exc:12.1} [exception 1] Tutti i campi devono essere compilati
+            \item[] \label{exc:12.2} [exception 2] Il campo "Conferma Password" deve essere uguale al campo "Password"
+        \end{description}
+\end{description}
+\subsubsection*{Descrizione Use Case "Richiesta Upgrade a UO"}
+\begin{description}
+    \item[] Titolo: Richiesta Upgrade a UO
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di upgrade dell'utente da UR a UO
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item L'utente UR una volta selezionata la pagina "Impostazioni" tramite l'icona \faIcon{cog} dalla home può selezionare "Upgrade A Organizzatore"
+            \item L'utente deve compilare un form contenente:
+                  \begin{itemize}
+                      \item nome organizzazione
+                      \item descrizione organizzazione
+                  \end{itemize}
+                  \hyperref[exc:14.1]{[exception 1]}
+            \item Il sistema manderà una mail agli admin per elaborare la richiesta (eventuali ulteriori messaggi effettuati all'esterno del sistema)
+        \end{enumerate}
+    \item[] Exceptions:
+        \begin{description}
+            \item[] \label{exc:14.1} [exception 1] Tutti i campi devono essere compilati
+        \end{description}
+\end{description}
+\clearpage
+\subsection{RF13 Modifica Profilo (UO)}
+\begin{center}
+    \item[] \includegraphics[scale=0.5]{UseCase_6.png}
+\end{center}
+\subsubsection*{Descrizione Use Case "Modifica Profilo UO"}
+\begin{description}
+    \item[] Titolo: Modifica Profilo UO
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di modifica del profilo per utente UO
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item L'utente UO una volta selezionata la pagina "Impostazioni" tramite l'icona \faIcon{cog} dalla home può selezionare i tasti "Modifica Profilo", "Cambio Password" e "Eliminazione Account".
+                  \begin{itemize}
+                      \item Modifica Profilo: selezionando "Modifica Profilo" è possibile modificare il profilo con: alias, foto profilo
+                      \item Cambio Password: selezionando "Cambio Password" l'utente potrà inserire: nuova password, conferma nuova password \hyperref[exc:13.1]{[exception 1]}\hyperref[exc:13.2]{[exception 2]}
+                      \item Eliminazione Account: selezionando "Eliminazione Account" l'utente potrà eliminare il proprio account. È necessario confermare cliccando su un pop-up
+                  \end{itemize}
+        \end{enumerate}
+    \item[] Exceptions:
+        \begin{description}
+            \item[] \label{exc:13.1} [exception 1] Tutti i campi devono essere compilati
+            \item[] \label{exc:13.2} [exception 2] Il campo "Conferma Password" deve essere uguale al campo "Password"
+        \end{description}
+\end{description}
+\clearpage
+\subsection{RF15 Consegna e Revoca Privilegi}
+\begin{center}
+    \item[] \includegraphics[scale=0.5]{UseCase_5.png}
+\end{center}
+\subsubsection*{Descrizione Use Case "Consegna e Revoca Privilegi"}
+\begin{description}
+    \item[] Titolo: Consegna e Revoca Privilegi
+    \item[] Riassunto: Questo Use Case descrive come avviene la procedura di consegna e revoca privilegi
+    \item[] Descrizione:
+        \begin{enumerate}
+            \item L'utente UA nella schermata "Impostazioni" seleziona l'opzione "Gestisci Privilegi"
+            \item Il sistema presenta una schermata contenente un form in cui bisogna:
+                  \begin{itemize}
+                      \item Inserire la mail dell'utente da gestire
+                      \item Selezionare il privilegio da assegnare
+                  \end{itemize}
+                  inoltre il sistema deve controllare l'\hyperref[exc:15.1]{[exception 1]}
+        \end{enumerate}
+    \item[] Exceptions:
+        \begin{description}
+            \item[] \label{exc:15.1} [exception 1] Tutti i campi devono essere compilati
+        \end{description}
 \end{description}
 \renewcommand\thesubsection{\origthesubsection}
 \clearpage

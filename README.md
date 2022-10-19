@@ -27,6 +27,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## Intro
+
 <p>
 Data la difficoltà nella ricerca di attività serali con cui potersi svagare a Trento, siamo giunti alla conclusione
 che sarebbe utile un’applicazione raggruppante tutti gli eventi disponibili nelle varie serate, presenti in
@@ -35,15 +36,15 @@ città e dintorni.
 
 ### Built With
 
- [![LaTeX][LaTeX]][latex-url]
+[![LaTeX][latex]][latex-url]
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
 - [x] D1 - [Documento dei Requisiti](https://github.com/T42CaCaGhi-Project/Documentazione/tree/main/D1_Documento_Requisiti)
-- [ ] D2 -
-- [ ] D3 - 
+- [ ] D2 - [Specifica dei Requisiti](https://github.com/T42CaCaGhi-Project/Documentazione/tree/main/D2_Specifica_Requisiti)
+- [ ] D3 -
 - [ ] D4 -
 - [ ] D5 -
 - [ ] D6 -
@@ -75,12 +76,9 @@ Project Link: [https://github.com/T42CaCaGhi-Project](https://github.com/T42CaCa
 
 [contributors-shield]: https://img.shields.io/github/contributors/T42CaCaGhi-Project/Documentazione.svg?style=flat
 [contributors-url]: https://github.com/T42CaCaGhi-Project/Documentazione/graphs/contributors
-
 [issues-shield]: https://img.shields.io/github/issues/T42CaCaGhi-Project/Documentazione.svg?style=flat
 [issues-url]: https://github.com/T42CaCaGhi-Project/Documentazione/issues
-
-[LaTeX]: https://img.shields.io/badge/latex-%23008080.svg??style=flat&logo=latex&logoColor=white
+[latex]: https://img.shields.io/badge/latex-%23008080.svg??style=flat&logo=latex&logoColor=white
 [latex-url]: https://www.latex-project.org/
 
 <!-- https://www.bit.ly/ASD_Name -->
-
