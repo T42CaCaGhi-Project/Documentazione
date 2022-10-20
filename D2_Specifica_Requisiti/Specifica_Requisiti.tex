@@ -8,6 +8,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fontawesome5}
+\usepackage{longtable}
 
 
 \graphicspath{ {./images/} }
@@ -320,9 +321,104 @@
 \renewcommand\thesubsection{\origthesubsection}
 \clearpage
 \section{Requisiti Non Funzionali}
-\begin{description}
-    \item[]
-\end{description}
+\renewcommand\thesubsection{}
+\subsection{RNF1 Privacy}
+\begin{center}
+    \begin{longtable}{|p{4cm}|p{8cm}|p{4cm}|}
+        \hline
+        Proprietà                                     & Descrizione                                                                                                                                                                                                                                                                                                                                                                                                                                                            & Misura   \\
+        \hline
+        Codice della Privacy                          & Per codice dalla privacy intendiamo la norma della Repubblica Italiana, emanata con il Decreto legislativo 30 giugno 2003, n. 196, in vigore dal 1º gennaio 2004.                                                                                                                                                                                                                                                                                                      & Conforme \\
+        \hline
+        Regolamento per la protezione dei dati (GDPR) & Il Regolamento Generale sulla Protezione dei Dati in sigla RGPD (o GDPR in inglese General Data Protection Regulation), ufficialmente regolamento (UE) n. 2016/679, è un regolamento dell'Unione europea in materia di trattamento dei dati personali e di privacy, adottato il 27 aprile 2016, pubblicato sulla Gazzetta ufficiale dell'Unione europea il 4 maggio 2016 ed entrato in vigore il 24 maggio dello stesso anno e operativo a partire dal 25 maggio 2018. & Conforme \\
+        \hline
+    \end{longtable}
+\end{center}
+\subsection{RNF2 Sicurezza}
+\begin{center}
+    \begin{longtable}{|p{4cm}|p{8cm}|p{4cm}|}
+        \hline
+        Proprietà                        & Descrizione                                                                          & Misura                          \\
+        \hline
+        Trasmissione dati autenticazione & Modalità di trasmissione delle credenziali raccolte in fase di autenticazione        & Utilizzo protocollo HTTPS       \\
+        \hline
+        Raccolta dati tramite form       & Modalità di trasmissione dei dati raccolti tramite i form proposti dall'applicazione & Utilizzo protocollo HTTPS       \\
+        \hline
+        Richiesta dati all'API           & Modalità di autorizzazione RestAPI                                                   & Utilizzo JWT e protocollo HTTPS \\
+        \hline
+    \end{longtable}
+\end{center}
+\subsection{RNF3 Scalabilità}
+\begin{center}
+    \begin{longtable}{|p{4cm}|p{8cm}|p{4cm}|}
+        \hline
+        Proprietà                                            & Descrizione                                                                 & Misura                                    \\
+        \hline
+        Elaborazione con un numero crescente di utenti       & Capacità del sistema di gestire un numero crescente di utenti in simultanea & Garantita fino a 100 utenti in simultanea \\
+        \hline
+        Memorizzazione dei dati con un numero alto di utenti & Capacità del sistema di gestire i dati generati da un alto numero di utenti & Garantita fino a 100 utenti               \\
+        \hline
+    \end{longtable}
+\end{center}
+\subsection{RNF4 Affidabilità}
+\begin{center}
+    \begin{longtable}{|p{4cm}|p{8cm}|p{4cm}|}
+        \hline
+        Proprietà          & Descrizione                                                                                          & Misura                        \\
+        \hline
+        Integrità dei dati & Per integrità dei dati si intende il mantenimento dei dati nel DataBase anche dopo dei guasti/errori & Creazione di Backup periodici \\
+        \hline
+    \end{longtable}
+\end{center}
+\subsection{RNF5 Memorizzazione}
+\begin{center}
+    \begin{longtable}{|p{4cm}|p{8cm}|p{4cm}|}
+        \hline
+        Proprietà & Descrizione                                                                                                        & Misura                     \\
+        \hline
+        TBD       & La memorizzazione dei dati avviene interamente su DataBase sul server quindi all'utente non verrà occupata memoria & Utilizzo di DataBase NoSQL \\
+        \hline
+    \end{longtable}
+\end{center}
+\subsection{RNF6 Compatibilità e Accessibilità}
+\begin{center}
+    \begin{longtable}{|p{4cm}|p{8cm}|p{4cm}|}
+        \hline
+        Proprietà                 & Descrizione                                                                             & Misura                                                                                 \\
+        \hline
+        Compatibilità con Android & Sistema operativo e versione a partire dalla quale l'applicazione può essere installata & L'applicazione deve essere compatibile con Android 8.0 o superiori                     \\
+        \hline
+        Compatibilità con iOS     & Sistema operativo e versione a partire dalla quale l'applicazione può essere installata & L'applicazione deve essere compatibile con iOS 12 o superiori                          \\
+        \hline
+        Compatibilità con Browser & Sistema operativo e versione a partire dalla quale l'applicazione può essere installata & L'applicazione deve essere compatibile con i principali browser: Firefox, Chrome, Edge \\
+        \hline
+    \end{longtable}
+\end{center}
+\subsection{RNF7 Supportabilità}
+\begin{center}
+    \begin{longtable}{|p{4cm}|p{8cm}|p{4cm}|}
+        \hline
+        Proprietà      & Descrizione              & Misura                                                                            \\
+        \hline
+        App supportate & Disponibilità di utlizzo & Sistema composto da web-app creato in React, quindi è disponibile su ogni browser \\
+        \hline
+    \end{longtable}
+\end{center}
+\subsection{RNF8 Facilità di Utilizzo}
+\begin{center}
+    \begin{longtable}{|p{4cm}|p{8cm}|p{4cm}|}
+        \hline
+        Proprietà         & Descrizione                                              & Misura                                                                                     \\
+        \hline
+        Accessibilità     & La mappa è scalabile                                     & L'utente può ingrandire la mappa a piacimento usando pulsanti appositi di zoom-in zoom-out \\
+        \hline
+        Personalizzazione & L'utente può personalizzare l'aspetto dell'app           & L'utente può cambiare tra light mode e dark mode all'interno delle impostazioni            \\
+        \hline
+        UI intuitiva      & L'utente può spostarsi tra le schermate in modo semplice & L'utente può spostarsi tra le schermate in modo semplice e intuitivo                       \\
+        \hline
+    \end{longtable}
+\end{center}
+\renewcommand\thesubsection{\origthesubsection}
 \clearpage
 \section{Analisi del Contesto}
 \begin{description}

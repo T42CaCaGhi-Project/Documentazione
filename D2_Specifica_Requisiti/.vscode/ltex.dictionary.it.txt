@@ -37,3 +37,10 @@ exception
 Extensions
 extension
 pop-up
+to
+Regulation
+Protection
+General
+web-app
+zoom-out
+zoom-in
