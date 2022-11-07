@@ -45,23 +45,23 @@
 \begin{description}
     \item[] Data la difficoltà nella ricerca di attività serali con cui potersi svagare a Trento, siamo giunti alla conclusione che sarebbe utile un’applicazione raggruppante tutti gli eventi disponibili nelle varie serate, presenti in città e dintorni.
     \item[] L’applicazione, chiamata “Fen Festa”:
-          \begin{itemize}
-              \item aiuta gli utenti base a trovare la proposta che fa per loro, facendo visualizzare un calendario nel quale sono segnati tutti gli eventi disponibili in quella serata (o nelle successive), coadiuvati da un’immagine, un titolo, posizione e una descrizione dell’evento
-              \item l’utente può, oltre che salvare nei preferiti l’evento, comunicare la sua partecipazione
-              \item permette agli organizzatori di eventi, gestori di bar e simili, di inserire le loro proposte nell’applicazione, tramite un form precompilato
-              \item permette di salvarsi gli eventi a cui l’utente è interessato e a poter ricevere una notifica nella giornata in cui sono stati programmati
-          \end{itemize}
+        \begin{itemize}
+            \item aiuta gli utenti base a trovare la proposta che fa per loro, facendo visualizzare un calendario nel quale sono segnati tutti gli eventi disponibili in quella serata (o nelle successive), coadiuvati da un’immagine, un titolo, posizione e una descrizione dell’evento
+            \item l’utente può, oltre che salvare nei preferiti l’evento, comunicare la sua partecipazione
+            \item permette agli organizzatori di eventi, gestori di bar e simili, di inserire le loro proposte nell’applicazione, tramite un form precompilato
+            \item permette di salvarsi gli eventi a cui l’utente è interessato e a poter ricevere una notifica nella giornata in cui sono stati programmati
+        \end{itemize}
 \end{description}
 \clearpage
 \section{Requisiti}
 \begin{description}
     \item[] Vengono definiti 4 tipi di utente:
-          \begin{itemize}
-              \item Utente non registrato (\textbf{UNR})
-              \item Utente registrato (\textbf{UR})
-              \item Utente organizzatore (\textbf{UO})
-              \item Utente admin (\textbf{UA})
-          \end{itemize}
+        \begin{itemize}
+            \item Utente non registrato (\textbf{UNR})
+            \item Utente registrato (\textbf{UR})
+            \item Utente organizzatore (\textbf{UO})
+            \item Utente admin (\textbf{UA})
+        \end{itemize}
 \end{description}
 \subsection{Requisiti Funzionali (RF)}
 \renewcommand\thesubsubsection{RF\arabic{subsubsection}}
@@ -79,57 +79,57 @@
 \begin{description}
     \item[] Si applica a: \textbf{UNR}
     \item[] L'utente non registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, visualizzando:
-          \begin{itemize}
-              \item Nome
-              \item Immagine
-              \item Descrizione
-              \item Tag
-              \item Data e Ora
-              \item Luogo (Posizione/Indirizzo)
-              \item Numero partecipanti
-          \end{itemize}
+        \begin{itemize}
+            \item Nome
+            \item Immagine
+            \item Descrizione
+            \item Tag
+            \item Data e Ora
+            \item Luogo (Posizione/Indirizzo)
+            \item Numero partecipanti
+        \end{itemize}
 \end{description}
 \subsubsection{Visualizzazione descrizione evento (Utente Registrato)} \label{rf_4}
 \begin{description}
     \item[] Si applica a: \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] L'utente registrato una volta selezionato l'evento dal calendario visualizza i dettagli dell'evento, quali:
-          \begin{itemize}
-              \item Nome
-              \item Immagine
-              \item Descrizione
-              \item Tag
-              \item Data e Ora
-              \item Luogo (Posizione/Indirizzo)
-              \item Numero partecipanti
-              \item Tasto "Partecipo"
-              \item Tasto "Salva Evento"
-          \end{itemize}
+        \begin{itemize}
+            \item Nome
+            \item Immagine
+            \item Descrizione
+            \item Tag
+            \item Data e Ora
+            \item Luogo (Posizione/Indirizzo)
+            \item Numero partecipanti
+            \item Tasto "Partecipo"
+            \item Tasto "Salva Evento"
+        \end{itemize}
 \end{description}
 \subsubsection{Creazione evento} \label{rf_5}
 \begin{description}
     \item[] Si applica a: \textbf{UO}, \textbf{UA}
     \item[] L'utente organizzatore o admin possono creare un nuovo evento compilando l'apposito form:
-          \begin{itemize}
-              \item Nome
-              \item Immagine
-              \item Descrizione
-              \item Tag
-              \item Data e Ora
-              \item Luogo (Posizione/Indirizzo)
-          \end{itemize}
+        \begin{itemize}
+            \item Nome
+            \item Immagine
+            \item Descrizione
+            \item Tag
+            \item Data e Ora
+            \item Luogo (Posizione/Indirizzo)
+        \end{itemize}
 \end{description}
 \subsubsection{Modifica evento} \label{rf_6}
 \begin{description}
     \item[] Si applica a: \textbf{UO}, \textbf{UA}
     \item[] L'utente organizzatore o admin possono modificare un evento attraverso l'apposito form:
-          \begin{itemize}
-              \item Nome
-              \item Immagine
-              \item Descrizione
-              \item Tag
-              \item Data e Ora
-              \item Luogo (Posizione/Indirizzo)
-          \end{itemize}
+        \begin{itemize}
+            \item Nome
+            \item Immagine
+            \item Descrizione
+            \item Tag
+            \item Data e Ora
+            \item Luogo (Posizione/Indirizzo)
+        \end{itemize}
 \end{description}
 \subsubsection{Eliminazione evento} \label{rf_7}
 \begin{description}
@@ -140,10 +140,10 @@
 \begin{description}
     \item[] Si applica a: \textbf{UNR}
     \item[] L'utente non registrato se ha già un account può effettuare il login inserendo:
-          \begin{itemize}
-              \item Email
-              \item Password
-          \end{itemize}
+        \begin{itemize}
+            \item Email
+            \item Password
+        \end{itemize}
 \end{description}
 \subsubsection{Recupero password} \label{rf_9}
 \begin{description}
@@ -154,11 +154,11 @@
 \begin{description}
     \item[] Si applica a: \textbf{UNR}
     \item[] L'utente non registrato può registrarsi tramite apposito form inserendo
-          \begin{itemize}
-              \item Email
-              \item Password
-              \item Conferma della Password
-          \end{itemize}
+        \begin{itemize}
+            \item Email
+            \item Password
+            \item Conferma della Password
+        \end{itemize}
 \end{description}
 \subsubsection{Conferma creazione account} \label{}
 \begin{description}
@@ -232,19 +232,19 @@
 \begin{description}
     \item[] L'applicazione sarà composta da un sito disponibile sia per smartphone, che per pc
     \item[] In questa sezione vengono riportati alcuni mock-up del front-end per smartphone
-          \begin{enumerate}
-              \item Pagina home con calendario
-              \item Pagina home con mappa
-              \item Pagina creazione evento
-          \end{enumerate}
+        \begin{enumerate}
+            \item Pagina home con calendario
+            \item Pagina home con mappa
+            \item Pagina creazione evento
+        \end{enumerate}
 \end{description}
 \subsection{Pagina home con calendario}
 \begin{description}
     \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_1]{\textbf{RF1}}, \hyperref[rf_2]{\textbf{RF2}}
     \item[] \begin{center}
-              \includegraphics[scale=0.6]{Home_Calendario.png}
-          \end{center}
+            \includegraphics[scale=0.6]{Home_Calendario.png}
+        \end{center}
     \item[] In questa schermata si possono visualizzare gli eventi giornalieri, settimanali o mensili.
     \item[] Selezionando un giorno nel calendario compariranno nell'elenco solo gli eventi relativi a quella giornata.
     \item[] Cliccando su un evento se ne potranno visualizzare i dettagli
@@ -259,8 +259,8 @@
     \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_1]{\textbf{RF1}}, \hyperref[rf_2]{\textbf{RF2}}
     \item[] \begin{center}
-              \includegraphics[scale=0.6]{Home_Mappa.png}
-          \end{center}
+            \includegraphics[scale=0.6]{Home_Mappa.png}
+        \end{center}
     \item[] In questa schermata viene visualizzata la mappa con indicata la posizione degli eventi del giorno in base all'indirizzo scelto al momento della creazione.
     \item[] Cliccando su un "\faIcon{map-marker-alt}" si potranno visualizzare i dettagli dell'evento.
     \item[] Premendo l'icona "\faIcon{search}" si potrà ricercare un evento specifico
@@ -274,8 +274,8 @@
     \item[] Utenti utilizzatori: \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_5]{\textbf{RF5}}
     \item[] \begin{center}
-              \includegraphics[scale=0.6]{Aggiungi_Evento.png}
-          \end{center}
+            \includegraphics[scale=0.6]{Aggiungi_Evento.png}
+        \end{center}
     \item[] In questa schermata è presente il form per la creazione di un nuovo evento
     \item[] L'utente deve inserire i dati richiesti (nome, data e ora, tags, descrizione, immagine e luogo) nei rispettivi campi presenti a schermo.
     \item[] È presente il tasto crea per confermare la creazione dell'evento o una croce in alto per annullare la compilazione.
@@ -286,10 +286,10 @@
     \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_3]{\textbf{RF3}}, \hyperref[rf_4]{\textbf{RF4}}
     \item[] \begin{center}
-              \includegraphics[scale=0.6]{Visualizza_Evento.png}
-          \end{center}
+            \includegraphics[scale=0.6]{Visualizza_Evento.png}
+        \end{center}
     \item[] Vengono visualizzati a schermo i dettagli dell'evento selezionato: nome, immagine, descrizione, tag, data e ora, luogo, numero partecipanti.
-    \item[] L'utente registrato ha accesso hai pulsanti "Partecipo" e "Salva Evento" che rispettivamente segnalano l'utente come partecipante o salvano l'evento nei preferiti dell'utente stesso.
+    \item[] L'utente registrato ha accesso ai pulsanti "Partecipo" e "Salva Evento" che rispettivamente segnalano l'utente come partecipante o salvano l'evento nei preferiti dell'utente stesso.
     \item[] Se l'utente è l'organizzatore, o un admin, potrà inoltre visualizzare il tasto modifica.
 \end{description}
 \clearpage
@@ -312,18 +312,18 @@
     \item[] Utenti utilizzatori: \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
     \item[] Requisiti interessati: \hyperref[rf_10]{\textbf{RF10}}, \hyperref[rf_12]{\textbf{RF12}}, \hyperref[rf_13]{\textbf{RF13}}, \hyperref[rf_14]{\textbf{RF14}}, \hyperref[rf_15]{\textbf{RF15}}
     \item[] \begin{center}
-              \includegraphics[scale=0.6]{Impostazioni.png}
-          \end{center}
+            \includegraphics[scale=0.6]{Impostazioni.png}
+        \end{center}
     \item[] Dalla pagina impostazioni è possibile accedere a diverse funzionalità:
-          \begin{enumerate}
-              \item creazione account \textbf{UNR}
-              \item visualizzazione informazioni account \textbf{UR}, \textbf{UO}, \textbf{UA}
-              \item modifica password \textbf{UR}, \textbf{UO}
-              \item eliminazione account \textbf{UR}, \textbf{UO}
-              \item richiesta upgrade ad account da organizzatore \textbf{UR}
-              \item switch tema chiaro / scuro \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
-              \item logout \textbf{UR}, \textbf{UO}, \textbf{UA}
-          \end{enumerate}
+        \begin{enumerate}
+            \item creazione account \textbf{UNR}
+            \item visualizzazione informazioni account \textbf{UR}, \textbf{UO}, \textbf{UA}
+            \item modifica password \textbf{UR}, \textbf{UO}
+            \item eliminazione account \textbf{UR}, \textbf{UO}
+            \item richiesta upgrade ad account da organizzatore \textbf{UR}
+            \item switch tema chiaro / scuro \textbf{UNR}, \textbf{UR}, \textbf{UO}, \textbf{UA}
+            \item logout \textbf{UR}, \textbf{UO}, \textbf{UA}
+        \end{enumerate}
     \item[] L'utente admin può inoltre elargire e revocare privilegi da organizzatore ad altri utenti inserendo la e-mail dell'interessato.
 \end{description}
 \subsection{Pagina creazione account}
@@ -331,8 +331,8 @@
     \item[] Utenti utilizzatori: \textbf{UNR}
     \item[] Requisiti interessati: \hyperref[rf_10]{\textbf{RF10}}
     \item[] \begin{center}
-              \includegraphics[scale=0.6]{Crea_Account.png}
-          \end{center}
+            \includegraphics[scale=0.6]{Crea_Account.png}
+        \end{center}
     \item[] L'utente deve compilare tre campi: e-mail, password, conferma password.
 \end{description}
 \clearpage
