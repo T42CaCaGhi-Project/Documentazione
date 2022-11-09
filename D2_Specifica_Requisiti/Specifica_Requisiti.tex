@@ -460,49 +460,135 @@
 \subsubsection{Creazione Account}
 \begin{description}
     \item[] \underline{Motivazione:}
-        Dati i requisiti, per compiere alcune operazioni, è necessario possedere un account
+        Dati i requisiti per compiere alcune operazioni è necessario possedere un account.
 \end{description}
-\subsubsection{Gestione Autenticazione}
+\subsubsection{Gestore Autenticazione}
 \begin{description}
     \item[] \underline{Motivazione:} Dati i requisiti l'autenticazione avviene tramite un sistema di credenziali interno. \\
-        È stato quindi identificato il componente \textbf{Gestione Autenticazione} che gestirà tutte le operazioni di autenticazione
 \end{description}
 \subsubsection{Gestore Account}
 \begin{description}
     \item[] \underline{Motivazione:}
+        Dati i requisiti è stata identificata la necessità di definire il componente \textbf{Gestore Account} per permettere all'utente di apportare modifiche al proprio account, di eliminare l'account, di richiedere l'upgrade dell'account, di recuperare la password.
 \end{description}
 \subsubsection{Gestore Notifiche}
 \begin{description}
     \item[] \underline{Motivazione:}
+        Necessitando, in linea con i requisiti, di un sistema per inviare comunicazioni con l'utenza è stato individuato il componente \textbf{Gestore Notifiche}.
 \end{description}
 \subsubsection{Creazione Evento}
 \begin{description}
     \item[] \underline{Motivazione:}
+        Il componente \textbf{Creazione Evento} è stato individuato per far fronte alla necessità dell'app di permettere la creazione di nuovi eventi da parte degli utenti con l'autorizzazione necessaria, in linea con le specifiche dei requisiti.
 \end{description}
 \subsubsection{Gestore Eventi}
 \begin{description}
-    \item[] \underline{Motivazione:} Dati i requisiti, la gestione degli eventi 
+    \item[] \underline{Motivazione:} Dati i requisiti, si individua il componente \textbf{Gestore Eventi} per modificare ed eliminare gli eventi nel database e per inoltrare i dati agli altri componenti.
 \end{description}
 \subsubsection{Mappa}
 \begin{description}
     \item[] \underline{Motivazione:}
+        Come da requisiti è necessario il componente \textbf{Mappa}, il quale si occupa di presentare gli eventi distribuendoli su una mappa.
 \end{description}
 \subsubsection{Elenco Eventi}
 \begin{description}
     \item[] \underline{Motivazione:}
+        Dati i requisiti è stata identificata la necessità di definire il componente \textbf{Elenco Eventi}, il quale si occupa di presentare all' utente gli eventi in un elenco
 \end{description}
 \subsubsection{Gestore Visualizzazione Evento}
 \begin{description}
     \item[] \underline{Motivazione:}
+        Dati i requisiti è stata identificata la necessità di definire il componente \textbf{Gestore Visualizzazione Evento}, il quale mostra all'utente informazioni riguardanti ul singolo evento e permette di di segnalare la propria partecipazione e/o aggiungere ai preferiti l'evento
 \end{description}
 \subsubsection{Gestore Preferiti}
 \begin{description}
     \item[] \underline{Motivazione:}
+        Dati i requisiti è stata identificata la necessità di definire il componente \textbf{Gestore Preferiti}, il quale si occupa di aggiungere ai preferiti dell'utente l'evento precedentemente visualizzato.
 \end{description}
 \clearpage
 \subsection{Diagramma dei componenti}
 \begin{description}
     \item[] \includegraphics[scale=0.6]{Component.png} \\
         \textbf{Figura 2. Diagramma dei Componenti per l'applicazione FenFesta} \label{fig:2}
+\end{description}
+\subsubsection{Creazione Account}
+\begin{description}
+    \item[] \underline{Descrizione:} Il componente \textbf{Creazione Account} si occupa di permettere all'utente di creare un proprio account unico andandolo a salvare nel database dell'app.
+    \item[] \underline{Interfaccia Richiesta - Credenziali:} Le credenziali richieste alla registrazione includono email, password e conferma della password
+    \item[] \underline{Interfaccia Fornita - Salva dati account:} Al momento della creazione di un nuovo account esso viene fornito al \textbf{Database} per l'imagazzinamento di esso
+    \item[] \underline{Interfaccia Fornita - Nuovo account:} Al momento della creazione di un nuovo accout esso viene fornito al \textbf{Gestore Autenticazione}
+\end{description}
+\subsubsection{Gestore Autenticazione}
+\begin{description}
+    \item[] \underline{Descrizione:} Il componente \textbf{Gestione Autenticazione} gestirà tutte le operazioni di autenticazione mantenendo poi attiva la sessione dell'utente nell'applicazione.
+    \item[] \underline{Interfaccia Richiesta - Credenziali:} Le credenziali richieste al login includono email, password
+    \item[] \underline{Interfaccia Richiesta - Nuovo account:} Il gestore richiede accesso agli account creati dal componente \textbf{Creazione Account} per verificare le credenziali
+    \item[] \underline{Interfaccia Fornita - Autorizzazione:} Una volta effettuato il login il \textbf{Gestore Autenticazione} fornisce agli altri componenti la sessione dell'utente
+\end{description}
+\subsubsection{Gestore Account}
+\begin{description}
+    \item[] \underline{Descrizione:} Permette all'utente di apportare modifiche al proprio account in base ai privilegi di cui si dispone (modifica password per account base, modifica dati organizzatore per account organizzatore), di eliminare l'account, di richiedere l'upgrade dell'account (mentre sempre grazie a questo componente l'admin può elargire tali upgrade), di recuperare la password (comunicando la necessità di un invio mail al componente \textbf{Gestore Notifiche})
+    \item[] \underline{Interfaccia Richiesta - Autorizzazione:} Sessione utente fornita dal \textbf{Gestore Autenticazione}
+    \item[] \underline{Interfaccia Richiesta - Dati modifica profilo:} Dati modificati dall'utente richiesti per effettuare la modifica del proprio profilo
+    \item[] \underline{Interfaccia Richiesta - Richiesta upgrade account:} Richiesta per effettuare l'upgrade da utente registrato \textbf{UR} a utente organizzatore \textbf{UO}
+    \item[] \underline{Interfaccia Fornita - Eliminazione account:} Dati riguardanti l'eliminazione del profilo diretti al \textbf{Database}
+    \item[] \underline{Interfaccia Fornita - Modifica account:} Dati riguardanti la modifica del profilo diretti al \textbf{Database}
+    \item[] \underline{Interfaccia Fornita - Concessione upgrade account:} Concessione fornita da un utente admin \textbf{UA} verso un utente registrato \textbf{UR} per effettuare l'upgrade del proprio account
+    \item[] \underline{Interfaccia Fornita - Invio recupero password:} Una volta effettuata la richiesta di recupero password il componente invia al \textbf{Gestore Notifiche} i dati per successivamente creare e mandare la mail all'utente
+\end{description}
+\subsubsection{Gestore Notifiche}
+\begin{description}
+    \item[] \underline{Descrizione:} Il componente si interfaccerà con un sistema esterno per l'invio di mail riguardanti gli eventi prossimi e le eventuali richieste di recupero password.
+    \item[] \underline{Interfaccia Richiesta - Invio recupero password:} Dati ricevuti dal \textbf{Gestore Account} per successivamente inviare una mail all'utente, contenente il recupero delle credenziali
+    \item[] \underline{Interfaccia Richiesta - Invio notifica evento:} Dati richiesti per successivamente mandare la notifica all'utente riguardante gli eventi da esso preferiti
+    \item[] \underline{Interfaccia Fornita - Invio Mail:} Dati forniti al \textbf{Gestore Mail} per inviare le mail
+\end{description}
+\subsubsection{Creazione Evento}
+\begin{description}
+    \item[] \underline{Descrizione:} Il componente permette ad un utente autorizzato di creare nuovi eventi. Una volta ricevuti dall'utente i dati riguardo il nuovo evento da aggiungere al database, il componente, verificata la validità delle informazioni inserite, aggiungerà il nuovo evento al database per permettere ad altri componenti di interfacciarsi con suddetti dati.
+    \item[] \underline{Interfaccia Richiesta - Autorizzazione:} Sessione utente fornita dal \textbf{Gestore Autenticazione}
+    \item[] \underline{Interfaccia Richiesta - Dati evento:} Dati richiesti all'utente organizzatore \textbf{UO} per la creazione di un nuovo evento
+    \item[] \underline{Interfaccia Fornita - Nuovo evento:} Al momento della creazione di un nuovo evento esso viene fornito al \textbf{Gestore Eventi}
+    \item[] \underline{Interfaccia Fornita - Salva nuovo evento:} una volta creato l'evento il componente invia i dati al \textbf{Database}
+\end{description}
+\subsubsection{Gestore Eventi}
+\begin{description}
+    \item[] \underline{Descrizione:} Il componente permetterà agli utenti autorizzati (proprietario e admin) di apportare modifiche ed eliminare gli eventi presenti nel database. Inoltre fornisce i dati (i vari eventi presenti in database) necessari ai componenti \textbf{Mappa} e \textbf{Elenco Eventi}, filtrandoli se necessario in base alla stringa di ricerca scelta dall'utente. Si occupa di inviare richieste di invio notifica al componente \textbf{Gestore Notifiche}.
+    \item[] \underline{Interfaccia Richiesta - Nuovo evento:} Il gestore richiede accesso ai nuovi eventi creati dal componente \textbf{Creazione Evento} per verificarne i dati
+    \item[] \underline{Interfaccia Richiesta - Ricerca evento:} Dati richiesti riguardanti la ricerca di un evento specifico
+    \item[] \underline{Interfaccia Richiesta - Dati evento:} Dati richiesti all'utente organizzatore \textbf{UO} per la modifica di un evento
+    \item[] \underline{Interfaccia Fornita - Modifica evento:} Dati riguardanti alla modifica di un evento forniti al \textbf{Database}
+    \item[] \underline{Interfaccia Fornita - Eliminazione evento:} Dati riguardanti l'eliminazione di un evento forniti al \textbf{Database}
+    \item[] \underline{Interfaccia Fornita - Lista eventi:} Dati riguardanti la lista degli eventi forniti ai componenti \textbf{Mappa} e \textbf{Elenco eventi}
+\end{description}
+\subsubsection{Mappa}
+\begin{description}
+    \item[] \underline{Descrizione:} Coerentemente con i dati geografici presenti nei dati evento ricevuti dal componente \textbf{Gestore Eventi}, il componente renderizza una mappa con l'ausilio di un servizio esterno. Selezionando un evento si passa alla visualizzazione delle sue informazioni, gestita dal componente \textbf{Gestione Visualizzazione Evento}.
+    \item[] \underline{Interfaccia Richiesta - Lista eventi:} Lista degli eventi da mostrare all'utente
+    \item[] \underline{Interfaccia Fornita - Mostra eventi:} Dati riguardanti gli eventi, sono forniti all'utente sotto forma di visualizzazione
+    \item[] \underline{Interfaccia Fornita - Dati evento:} Dati dell'evento specifico forniti al \textbf{Gestore Visualizzazione Evento} per visualizzarne i dettagli
+\end{description}
+\subsubsection{Elenco Eventi}
+\begin{description}
+    \item[] \underline{Descrizione:} Il componente si occupa di presentare all' utente gli eventi in un elenco. Selezionando un evento si passa alla visualizzazione delle sue informazioni, gestita dal componente \textbf{Gestione Visualizzazione Evento}
+    \item[] \underline{Interfaccia Richiesta - Lista eventi:} Lista degli eventi da mostrare all'utente
+    \item[] \underline{Interfaccia Fornita - Mostra eventi:} Dati riguardanti gli eventi, sono forniti all'utente sotto forma di visualizzazione
+    \item[] \underline{Interfaccia Fornita - Dati evento:} Dati dell'evento specifico forniti al \textbf{Gestore Visualizzazione Evento} per visualizzarne i dettagli
+\end{description}
+\subsubsection{Gestore Visualizzazione Evento}
+\begin{description}
+    \item[] \underline{Descrizione:} Permette di visualizzare informazioni sul singolo evento selezionato o dal componente \textbf{Mappa} o dal componente \textbf{Elenco Eventi}. Permette inoltre di richiedere di aggiungere un evento ai preferiti dell'utente, richiesta che verrà presa in carico dal componente \textbf{Gestore Preferiti}. L'utente può segnalare la propria partecipazione
+    \item[] \underline{Interfaccia Richiesta - Dati evento:} Dati dell'evento specifico richiesti sia dal componente \textbf{Mappa} che dal componente \textbf{Elenco Eventi}
+    \item[] \underline{Interfaccia Richiesta - Segnalazione partecipazione:} Dato riguardante la partecipazione di un utente ad un evento forniti al \textbf{Gestore Visualizzazione Evento} stesso
+    \item[] \underline{Interfaccia Richiesta - Aggiunta preferiti:} Dati riguardanti la preferenza di un evento per un utente persi in input dall'utente stesso
+    \item[] \underline{Interfaccia Fornita - Aggiunta preferiti:} Dati riguardanti la preferenza di un evento per un utente forniti al componente \textbf{Gestore Preferiti}
+    \item[] \underline{Interfaccia Fornita - Descrizione evento:} Dati forniti all'utente riguardanti la descrizione del evento precedentemente selezionato
+\end{description}
+\subsubsection{Gestore Preferiti}
+\begin{description}
+    \item[] \underline{Descrizione:} Il componente si occupa di aggiungere ai preferiti dell'utente l'evento visualizzato nel componente \textbf{Gestore Visualizzazione Evento}, gli eventi prossimi vengono segnalati al componente \textbf{Gestore Notifiche}
+    \item[] \underline{Interfaccia Richiesta - Aggiunta Preferiti:} Dati richiesti al \textbf{Gestore Visualizzazione Evento} riguardo l'evento da aggiungere ai preferiti dell'utente
+    \item[] \underline{Interfaccia Fornita - Invio Notifica Evento:} Fornisce al componente \textbf{Gestore Notifiche} i dati relativi all'evento prossimo per permettere la generazione di una notifica
+    \item[] \underline{Interfaccia Fornita - Salva preferito:} Dati forniti al \textbf{Database} per salvare l'evento come preferito
 \end{description}
 \end{document}
