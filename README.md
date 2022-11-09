@@ -47,7 +47,6 @@ città e dintorni.
 - [ ] D3 -
 - [ ] D4 -
 - [ ] D5 -
-- [ ] D6 -
 
 Vedi [milestones](https://github.com/T42CaCaGhi-Project/Documentazione/milestones).
 
