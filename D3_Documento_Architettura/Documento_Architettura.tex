@@ -50,7 +50,7 @@
 \subsection{Utenti}
 \begin{description}
     \item[] Analizzando il diagramma di contesto e quello dei componenti si individua la presenza di diversi attori per definire diversi lielli di "User". In particolare si identificano lo user non autenticato \textbf{UtenteNonRegistrato} da cui deriva quello autenticato \textbf{Utente} e i due da esso derivati \textbf{Organizzatore} e \textbf{Admin}.
-    \item[] \textbf{Utente} è colui che utlizza l'app per vedere gli eventi disponibili, abbia esso effettuato il login o meno (il login offre più funzionalità specificate in documenti precedenti che verranno meglio identificate successivamente nella seizone inerente OCL).
+    \item[] \textbf{Utente} è colui che utlizza l'app per vedere gli eventi disponibili, abbia esso effettuato il login o meno (il login offre più funzionalità specificate in documenti precedenti che verranno meglio identificate successivamente nella sezione inerente all'OCL).
     \item[] \textbf{Organizzatore} e \textbf{Admin} sono due tipi specifici di utente che dispongono di autorizzazioni extra, sono quindi classi derivate tramite generalizzazione dalla classe \textbf{Utente}
 \end{description}
 \begin{center}
@@ -67,14 +67,14 @@
 \newpage
 \subsection{Creazione e Gestione Eventi}
 \begin{description}
-    \item[] Il diagramma dei componenti identifica due componenti per la gestione degli eventi, dividendo il processo in una prima parte di creazione e una seconda di gestione. Avendo accesso all'intero elenco di eventi la gestione si occupa anche di effettuare la ricerca di un evento. Vengono quindi identificate le rispettive classi \textbf{CreazioneEventi} \textbf{GestoreEventi}.
+    \item[] Il diagramma dei componenti identifica due componenti per la gestione degli eventi, dividendo il processo in una prima parte di creazione e una seconda di gestione. Avendo accesso all'intero elenco di eventi la gestione si occupa anche di effettuare la ricerca di un evento. Vengono quindi identificate le rispettive classi \textbf{CreazioneEventi} e \textbf{GestoreEventi}.
 \end{description}
 \begin{center}
     \item[] \includegraphics[scale=0.7]{gestoreEventi.png}
 \end{center}
 \subsection{Visualizzazione degli eventi}
 \begin{description}
-    \item[] Il diagramma dei componenti identifica i componenti \textbf{Gestore Visualizzazione Evento}, \textbf{Mappa} e \textbf{Elenco Eventi} che assieme si occupano di mostrare agli utenti gli eventi. Creando una classe per ogni componente identifichiamo \textbf{Mappa}, \textbf{ElencoEventi} e \textbf{GestoreVisualizzazioneEvento}. L'utente si interfaccia con queste classi per ricercare e visualizzare gli eventi salvati in app. Può visualizzare i dati del dingolo evento mostrati dal \textbf{GestoreVisualizzazioneEvento}.
+    \item[] Il diagramma dei componenti identifica i componenti \textbf{Gestore Visualizzazione Evento}, \textbf{Mappa} e \textbf{Elenco Eventi} che assieme si occupano di mostrare agli utenti gli eventi. Creando una classe per ogni componente identifichiamo \textbf{Mappa}, \textbf{ElencoEventi} e \textbf{GestoreVisualizzazioneEvento}. L'utente si interfaccia con queste classi per ricercare e visualizzare gli eventi salvati in app. Può visualizzare i dati del singolo evento mostrati dal \textbf{GestoreVisualizzazioneEvento}, il quale interagendo con altre classi permette l'aggiunta dell'evento ai preferiti.
 \end{description}
 \begin{center}
     \item[] \includegraphics[scale=0.7]{visualizzaEventi.png}
