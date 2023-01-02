@@ -1,0 +1,110 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{longtable}
+
+
+\graphicspath{ {./images/} }
+
+\renewcommand{\contentsname}{Indice}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+
+
+\title{\textbf{\Huge Report Finale}}
+\author{Edoardo Ghirardello, Giulio Cappelli, Elia Casotti \\ \\ Gruppo T42}
+\date{2022}
+
+\let\origthesubsection\thesubsection
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+\tableofcontents
+\clearpage
+
+\section{Organizzazione del lavoro}
+\begin{description}
+    \item[] Per la realizzazione del progetto è stato diviso il lavoro in base alle competenze di ognuno dei componenti del gruppo.
+        Giulio ed Elia hanno lavorato in contemporanea a front-end e back-end nell'ultimo mese di lavoro, mentre nella prima parte del semestre il lavoro tra D1, D2 e D3 è stato suddiviso equamente.
+        Per la scrittura dei vari documenti è stato utilizzato LaTeX, configurato nei pc di Elia e Giulio. Proprio per questo motivo i commit su Git son stati fatti tutti da Giulio o da Elia, essendo che gli scritti realizzati da Edoardo son stati trasposti su LaTeX da uno degli altri compagni e poi committati.
+        Su GitHub abbiamo utilizzato le issues e le milestones per tenere traccia dei progressi fatti e le cose da fare
+    \item[] La maggior parte del lavoro della parte iniziale del progetto è stata svolta in presenza, dopo le lezioni di Ingegneria del Software, in aule libere dell'ateneo.
+        Dopodiché, nella seconda parte del progetto, il lavoro è stato molto più incentrato sullo studio individuale nelle proprie abitazioni; le discussioni sulla stesura dei documenti sono avvenute tramite una chat vocale sull'applicazione Discord.
+\end{description}
+\clearpage
+\section{Ruoli e Attività}
+\begin{center}
+    \begin{longtable}{|l|l|p{6cm}|}
+        \hline
+        \multicolumn{1}{|c}{\textbf{Componente del team}} & \multicolumn{1}{|c|}{\textbf{Ruolo}}  & \multicolumn{1}{c|}{\textbf{Principali attività}}                                                                                                                                                                                                                                                                                                                                                            \\ \hline
+        Edoardo Ghirardello                               & Project leader / Progettista          & Il ruolo principale è stato quello di revisione dei documenti e realizzazione della maggior parte delle strutture grafiche dei documenti. In particolare si è occupato della creazione di tutto il mock up dell'app, della realizzazione dei vari diagrammi, in particolare Use Case, Diagramma dei componenti e User Flow. Ha contribuito a tutti i deliverable, in particolare D1, D2 e D3                 \\ \hline
+        Giulio Cappelli                                   & Analista / Progettista / Sviluppatore & Il ruolo principale è stato quello dello sviluppatore del front-end, sbilanciando il suo monte ore nel D4. Ha poi scritto i requisiti funzionali e non funzionali dell'applicazione e si è occupato della gestione del tempo sul progetto, con particolare riguardo alle scadenze. Ha contribuito a tutti i deliverable, in particolare D2 e D4                                                              \\ \hline
+        Elia Casotti                                      & Analista / Sviluppatore               & Il suo ruolo è stato principalmente lo sviluppatore di back-end, facendogli aumentare vertiginosamente la somma delle ore-lavoro verso la fine del progetto, nel D4. Ha poi aiutato nella creazione di vari diagrammi quali Diagramma di Contesto, delle Classi e la parte conclusiva sulle Risorse derivanti dalle API  e il Resources Model. Ha contribuito a tutti i deliverable, in particolare D3 e D4. \\ \hline
+    \end{longtable}
+\end{center}
+\clearpage
+\section{Carico e Distribuzione del lavoro}
+\begin{center}
+    \begin{longtable}{|l|l|l|l|l|l|l|}
+        \hline
+        Componente del Team & D1    & D2    & D3    & D4    & D5    & Totale \\ \hline
+        Giulio Cappelli     & 11.00 & 16.30 & 3.00  & 29.30 & 3.00  & 63.00  \\ \hline
+        Elia Casotti        & 13.00 & 12.25 & 10.00 & 60.45 & 3.00  & 99.00  \\ \hline
+        Edoardo Ghirardello & 16.00 & 10.40 & 6.10  & 10.05 & 5.30  & 48.25  \\ \hline
+        Totale              & 40.00 & 39.25 & 19.10 & 99.00 & 48.25 & 210.25 \\ \hline
+    \end{longtable}
+\end{center}
+\begin{description}
+    \item[] Come si evince dalla tabella, il D4 è il documento che ha preso più tempo al progetto, essendo la parte in cui si sviluppano front-end e back-end.
+        Giulio ed Elia hanno lavorato più di Edoardo a questo specifico documento in quanto, discutendone nel gruppo, si è capito che le conoscenze pregresse di Giulio ed Elia erano sufficienti per fare il lavoro anche prima che venisse spiegato a lezione.
+        Edoardo, cominciando da zero con l'utilizzo di JavaScript, avrebbe dovuto imparare a scrivere un front-end o un back-end che indubbiamente avrebbero fatto meglio Giulio ed Elia e anche in minor tempo.
+        Nonostante abbia cercato di aiutare il team anche nella realizzazione del D4, Edoardo ha pensato che si sarebbe dovuto concentrare sul resto degli aspetti di tutti i documenti e la revisione del codice, così da ottimizzare il lavoro del gruppo e avere tutto il materiale pronto per la scadenza delle consegne dei deliverable.
+        È quindi spiegato anche il perché Giulio abbia così poche ore nel D3, essendo che Edoardo ed Elia hanno fatto la maggior parte del lavoro da svolgere mentre Giulio si occupava del front-end (che sarebbe stato messo nel documento successivo).
+\end{description}
+\clearpage
+\section{Criticità}
+\begin{description}
+    \item[] Come forse si può evincere dalla tabella delle ore, ma anche dalla consegna dei deliverable su GitHub, la vera e propria criticità è stata il D4. Mentre per i primi 3 documenti il gruppo ha lavorato in armonia, ognuno con il suo compito da svolgere, nel D4 si son riscontrate non poche difficoltà. Essendo verso la fine del semestre, anche altri corsi esigevano dei progetti da consegnare e questo ha tenuto impegnati tutti i componenti del gruppo, in particolare Edoardo che aveva 2 assignement in più da finire.
+    \item[] A parte ciò, le maggiori problematiche son state il deployment e la comunicazione tra front-end e back-end.
+    \item[] In particolare Giulio ed Elia hanno riscontrato disguidi tecnici che non permettevano il corretto funzionamento delle API, le quali una volta chiamate dal front-end non svolgevano il compito da loro rappresentato.
+        \begin{itemize}
+            \item Entrambi hanno riscontrato varie problematiche, la cui risoluzione ha impiegato diverso tempo dovendo consultare spesso le diverse documentazioni.
+            \item Elia ha dovuto lavorare a lungo per risolvere questi problemi, mettendoci diverse ore non solo per scrivere codice ma anche per capire dove stessero gli errori.
+                  In particolare il tentativo di hosting del backend su heroku, ora diventato a pagamento, e successivamente su vercel; quest'ultimo non renderizzava bene le pagine web quindi l'idea dell'hosting è stata abbandonata
+        \end{itemize}
+\end{description}
+\clearpage
+\section{Autovalutazione}
+\begin{description}
+    \item[] Nel complesso abbiamo tutti lavorato con costanza e dedizione al progetto, dedicando ore delle nostre giornate allo sviluppo dell'applicazione e impegnandoci sempre per ottenere il miglior risultato possibile.
+        Ragionando a posteriori, abbiamo fatto un ottimo lavoro di ottimizzazione del tempo e non c'è nulla che potessimo fare in più per migliorare il risultato finale.
+        Unica macchia negativa sono stati i problemi nella realizzazione del front-end, obbligandoci ad usare variabili statiche.
+        La principale problematica è stata l'uso delle API poiché nel front-end le API non ricevevano risposta anche se la richiesta era correttamente formulata.
+        Elia e Giulio hanno indubbiamente dato una grandissima mano al team con le loro conoscenze e hanno lavorato di più, soprattutto al D4.
+        Edoardo di conseguenza non si sente di mettersi al pari di loro due, ma essendosi dedicato anche lui al progetto per non dover far fare tutto al resto del team non si sente neanche di darsi una valutazione che si discosti di molto da quella degli altri due.
+    \item[] Sulla base delle suddette considerazioni, la nostra autovalutazione è:
+\end{description}
+\begin{center}
+    \begin{longtable}{|l|l|}
+        \hline
+                            & voto \\ \hline
+        Edoardo Ghirardello & 27   \\ \hline
+        Giulio Cappelli     & 29   \\ \hline
+        Elia Casotti        & 29   \\ \hline
+    \end{longtable}
+\end{center}
+\end{document}

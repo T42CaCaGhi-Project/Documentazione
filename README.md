@@ -46,7 +46,7 @@ città e dintorni.
 - [x] D2 - [Specifica dei Requisiti](https://github.com/T42CaCaGhi-Project/Documentazione/tree/main/D2_Specifica_Requisiti)
 - [x] D3 - [Documento di Architettura](https://github.com/T42CaCaGhi-Project/Documentazione/tree/main/D3_Documento_Architettura)
 - [x] D4 - [Sviluppo Applicazione](https://github.com/T42CaCaGhi-Project/Documentazione/tree/main/D4_Sviluppo_Applicazione)
-- [ ] D5 -
+- [x] D5 - [Report Finale](https://github.com/T42CaCaGhi-Project/Documentazione/tree/main/D5_Report_Finale)
 
 Vedi [milestones](https://github.com/T42CaCaGhi-Project/Documentazione/milestones).
 
