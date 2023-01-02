@@ -370,9 +370,18 @@
 \begin{description}
     \item[] Sono stati effettuati dei test usando jest su tutte le API implementate coprendo tutte o quasi (ad eccezione di errori interni del sistema) le tipologie di risposta identificate a partire dalle figure \hyperref[img:6]{6}, \hyperref[img:7]{7} e \hyperref[img:8]{8}.
     \item[] I test vengono eseguiti in modo sequenziale resettando e ripopolando dopo ogni test un database utilizzato esclusivamente per il testing.
-    \item[] Il comando con cui vengono eseguiti i test è '\textbf{jest --runInBand --coverage}', generando quindi anche la cartella \textbf{coverage} contenente il file \textbf{index.html} che se aperto in un browser fornisce informazioni addizionali sul completamento dei test effettuati.
-    \item[] Tutti i test eseguiti sono riusciti. Ne presentiamo un resoconto.
+    \item[] Il comando con cui vengono eseguiti i test è '\textbf{jest --runInBand --coverage}', è stato generata quindi anche la cartella \textbf{coverage} contenente il file \textbf{index.html} che se aperto in un browser fornisce informazioni addizionali sul completamento dei test effettuati.
+    \item[] Tutti i test eseguiti sono riusciti. Nella seguente immagine è possibile vedere come il 100\% delle funzioni viene coperto e quasi sempre la copertura delle righe di codice supera il 90\% (principalmente vengono saltate porzioni di codice che gestiscono eventuali errori interni al sistema che non si sono verificati durante il testing).
+    \item[] \begin{center}
+            \includegraphics[scale=0.5]{testOut.png}
+        \end{center}
+        \clearpage
+    \item[] Di seguito proponiamo un esempio dei test effettuati. La struttura dei test effettuati è la stessa per ogni test: i vari test sono raggruppati per API (salvo una singola eccezione dove era necessario un ambiente differente, per questo il test è stato svolto in maniera isolata) e divisi in due file, uno contenente i test per le API con percorso \textbf{/api/user} e uno contenentei test per le API con percorso \textbf{/api/event}.
+    \item[] \begin{center}
+            \includegraphics[scale=0.7]{getUserTest.png}
+        \end{center}
 \end{description}
+\clearpage
 \subsection{Testing API User}
 \subsubsection{POST /api/user/new}
 \begin{description}
@@ -406,9 +415,40 @@
     \item[] Fallisce se l'ID fornito non è nel formato corretto di un ID di MongoDB.
 \end{description}
 \subsubsection{POST /api/event/new}
+\begin{description}
+    \item[] Ha successo se il request body è corretto e lo user è autorizzato.
+    \item[] Fallisce se il request body è corretto ma lo user non è autorizzato.
+    \item[] Fallisce se il request body è corretto, lo user è autorizzato, ma esiste già un evento con lo stesso titolo e la stessa data di inizio
+\end{description}
 \subsubsection{POST /api/event/modify}
+\begin{description}
+    \item[] Ha successo se se stiamo modificanto un evento che esiste nel DB e se lo user è autorizzato (organizzatore).
+    \item[] Ha successo se se stiamo modificanto un evento che esiste nel DB e se lo user è autorizzato (admin).
+    \item[] Fallisce se lo user non è autorizzato.
+    \item[] Fallisce se si sta cercando di modificare un evento che non esiste.
+\end{description}
 \subsubsection{POST /api/event/delete}
+\begin{description}
+    \item[] Ha successo se l'evento esiste e lo user è autorizzato (orgganizzatore).
+    \item[] Ha successo se l'evento esiste e lo user è autorizzato (admin).
+    \item[] Fallisce se lo user non è autorizzato.
+    \item[] Fallisce se l'evento non esiste.
+\end{description}
 \subsubsection{POST /api/event/tag}
+\begin{description}
+    \item[] Ha successo se almeno un evento contiene il/i tag presenti nel request body.
+    \item[] Fallisce se nessun evento contiene i tag desiderati.
+\end{description}
 \subsubsection{POST /api/event/period}
+\begin{description}
+    \item[] Ha successo se esiste almeno un evento nel periodo scelto (sia esso giorno, settimana o mese).
+    \item[] Fallisce se non viene trovato alcun evento.
+\end{description}
 \subsubsection{POST /api/event/preferito}
+\begin{description}
+    \item[] Ha successo se l'evento esiste e lo user si identifica correttamente con il suo token (aggiunta dell'evento ai preferiti).
+    \item[] Ha successo se l'evento esiste e lo user si identifica correttamente con il suo token (rimozione dell'evento dai preferiti).
+    \item[] Fallisce se il token non è valido.
+    \item[] Fallisce se l'evento non esiste.
+\end{description}
 \end{document}
